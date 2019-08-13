@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="applicable-device" content="mobile">
+    <meta name="format-detection" content="email=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="address=no;">
+    <meta name="keywords" content="刑事律师,刑事辩护,刑事咨询,在线咨询,为你辩护网">
+    <meta name="description" content="为你辩护网多年来专注刑事领域，致力于打造全国最精品化、专业化、人性化的刑事律师在线服务平台，找刑事辩护律师，找刑事律师在线咨询就上为你辩护网，我们竭诚为您服务！">
+    <title>刑事辩护律师_刑事律师在线咨询—为您辩护网,全国专业刑事律师网</title>
+
+    <link href="__MOBILE__/css/base.css" rel="stylesheet" />
+    <link href="__MOBILE__/css/index_v2.css" rel="stylesheet" />
+    <script src="__MOBILE__/js/jquery.js"></script>
+
+    <!--&lt;!&ndash; 相册插件 &ndash;&gt;-->
+    <!--<link rel="stylesheet" type="text/css" href="__MOBILE__/js/photoswipe-4.1.2/dist/photoswipe.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="__MOBILE__/js/photoswipe-4.1.2/dist/default-skin/default-skin.css">-->
+    <!--<script src="__MOBILE__/js/photoswipe-4.1.2/dist/photoswipe.min.js"></script>-->
+    <!--<script src="__MOBILE__/js/photoswipe-4.1.2/dist/photoswipe-ui-default.min.js"></script>-->
+
+</head>
+<body>
+<!-- header 1 -->
+<header class="header-bar">
+
+    <div class="hd-normal">
+        <span class="hd-diqu1"><i class="ico-pd i-pd58"></i>广州</span>
+        <h1><img src="__IMG__/images/index_v2/logo.png" alt="" class="logo"></h1>
+        <span class="hd-menu"><i class="icon-mu"></i></span>
+    </div>
+</header>
+<!-- hd-sub-nav -->
+<div class="hd-sub-nav" id="hd-sub-nav">
+    <span class="hd-sub-close"><i class="ico-pd i-pd59"></i></span>
+    <div class="ovh">
+        <ul>
+            <li class="currer"><a href="{:url('index/index/index')}"><i class="ico-pd i-pd30"></i>首页</a></li>
+            <li><a href="{:url('index/Crlawyer/crlawyerlst')}"><i class="ico-pd i-pd31"></i>刑事律师</a></li>
+            <li><a href="khzx/default.htm"><i class="ico-pd i-pd32"></i>客户中心</a></li>
+            <li><a href="zszx/default.htm"><i class="ico-pd i-pd33"></i>知识中心</a></li>
+            <li><a href="xszx/default.htm"><i class="ico-pd i-pd34"></i>资讯中心</a></li>
+        </ul>
+        <div class="hd-sub-b">
+            <p class="f13">专业刑事法律服务平台</p>
+            <a href="tel_3a4000148149" class="hd-sub-tel">4000-148-149</a>
+        </div>
+    </div>
+</div>
+
+<!-- ban7 -->
+<div class="bg-fff pltb20-lr15">
+    <div class="banner ban7">
+        <img src="__IMG__/images/banner/banner07.jpg" alt="">
+        <div class="txt">
+            <h2>都在用的法律信息查询!</h2>
+            <div class="ban-search pl-search">
+                <input type="text" class="txt-search" placeholder="输入关键字搜索">
+                <button type="button" data-toptypeid="3" class="btn-search"><i class="ico-pd i-pd29"></i></button>
+            </div>
+        </div>
+    </div>
+    <ul class="ban-link mt10">
+        <li><a href="../fagui/default.htm"><i class="ico-pd i-pd24"></i>最新法律法规</a></li>
+        <li><a href="../rdxssj/default.htm"><i class="ico-pd i-pd23"></i>热点刑事事件</a></li>
+    </ul>
+</div>
+<div class="bg-fff plr15 mt10">
+    <div class="tit-nav tit-nav-borb">
+        <h2>最新法律法规</h2>
+        <a href="../fagui/default.htm" class="more-btn fr">more<i class="ico-pd i-pd44"></i></a>
+    </div>
+    <ul class="case-list meiti-list">
+        {volist name="falvfag" id="v" offset="0" length='5'}
+        <?php $v["addtime"] = strtr($v["addtime"], '-', '.');?>
+            <li>
+                <a href="../fagui/135863.html">
+                    <h2>{$v.article_name}</h2>
+                    <div class="info">
+                        <time>{$v.addtime|mb_substr=0,9,'utf-8'}</time>
+                        <span>{$v.fat_name}</span>
+                    </div>
+                </a>
+            </li>
+        {/volist}
+    </ul>
+</div>
+
+<!--  -->
+<div class="bg-fff plr15 mt10">
+    <div class="tit-nav tit-nav-borb">
+        <h2>热点刑事案件</h2>
+        <a href="../rdxssj/default.htm" class="more-btn fr">more<i class="ico-pd i-pd44"></i></a>
+    </div>
+    <ul class="case-list meiti-list">
+                <li>
+                    <a href="../rdxssj/106601.html">
+                        <div class="img"><img src="../../www.scxsls.com/d/file/201502/43d23d4404bc8624b9c4d2a07a00349f.jpg" alt=" 刑事律师大揭密：情人节落单，不是你的错！"></div>
+                        <h2> 刑事律师大揭密：情人节落单，不是你的错！</h2>
+                        <div class="info">
+                            <time>2017.08.21</time><span>刑事点评</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="../rdxssj/106198.html">
+                        <div class="img"><img src="../../www.scxsls.com/d/file/201501/5647a8fb198d80861461aea465e468db.jpg" alt="刑事律师：戳你痛处，别喊痛!"></div>
+                        <h2>刑事律师：戳你痛处，别喊痛!</h2>
+                        <div class="info">
+                            <time>2017.08.21</time><span>刑事点评</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="../rdxssj/104906.html">
+                        <div class="img"><img src="../../www.scxsls.com/d/file/201410/f17cdfda586667734b9dcd4661caeefc.jpg" alt="威胁孩子的九大犯罪"></div>
+                        <h2>威胁孩子的九大犯罪</h2>
+                        <div class="info">
+                            <time>2017.08.21</time><span>刑事点评</span>
+                        </div>
+                    </a>
+                </li>
+    </ul>
+</div>
+
+<!-- weizhi -->
+<div class="weizhi">
+    <a href="../default.htm">首页</a><i class="ico-pd i-pd44"></i><span>资讯中心</span>
+</div>
+
+<!-- 底部 -->
+{include file="common/bottom"}

@@ -1,0 +1,168 @@
+{include file="common/top"}
+<body>
+<div class="layui-fluid">
+    <div class="layui-row">
+        <form class="layui-form" onSubmit="return false;">
+            <div class="layui-form-item">
+                <label for="lunbotu_dz" class="layui-form-label">
+                    <span class="x-red">*</span>轮播图跳转地址
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="lunbotu_dz" value="{$lunbotu.img_dz}" name="lunbotu_dz" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    <span class="x-red">*</span>选填
+                </div>
+            </div>
+
+
+
+
+            <div class="layui-form-item">
+                <label for="lunbotu_url" class="layui-form-label">
+                    <span class="x-red">*</span>轮播图
+                </label>
+                <div class="layui-input-inline">
+                    <div class="layui-upload-drag" id="test10">
+                        <i class="layui-icon"></i>
+                        <p>点击上传，或将文件拖拽到此处</p>
+                    </div>
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    <input type="hidden" id="lunbotu_url" value="{$lunbotu.img_url}">
+                    <img id="img_img" src="{$lunbotu.img_url}" alt="">
+                </div>
+            </div>
+
+
+
+            <div class="layui-form-item">
+                <label for="lunbotu_url" class="layui-form-label">
+                </label>
+                <button class="layui-btn"  onclick="tijiao()">
+                    修改
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+
+
+    layui.use(['form', 'layer','upload'],
+    function () {
+        $ = layui.jquery;
+        var form = layui.form,
+            layer = layui.layer,
+            upload = layui.upload;
+
+
+
+        //拖拽上传
+        upload.render({
+            elem: '#test10'
+            ,url: "{:url('admin/article/file')}"
+            ,field:'upfile'
+            ,done: function(res){
+                if (res.taatus == '200') {
+                    layer.msg(res.msg, {
+                            icon: 6, time: 1000
+                        },
+                        function () {
+                           $('#img_img').attr('src',res.url);
+                           $('#lunbotu_url').attr('value',res.url)
+                        });
+                    return false;
+                }else {
+                    layer.msg(res.msg, {icon: 5, time: 1000});
+                }
+
+
+            }
+        });
+
+        //自定义验证规则
+        form.verify({
+            nikename: function (value) {
+                if (value.length < 5) {
+                    return '昵称至少得5个字符啊';
+                }
+            },
+            pass: [/(.+){6,12}$/, '密码必须6到12位'],
+            repass: function (value) {
+                if ($('#L_pass').val() != $('#L_repass').val()) {
+                    return '两次密码不一致';
+                }
+            }
+        });
+
+        //监听提交
+        form.on('submit(add)',
+            function (data) {
+                console.log('提交完成');
+                console.log(data);
+                //发异步，把数据提交给php
+                layer.alert("增加成功", {
+                        icon: 6
+                    },
+                    function () {
+                        //关闭当前frame
+                        xadmin.close();
+
+                        // 可以对父窗口进行刷新 
+                        xadmin.father_reload();
+                    });
+                return false;
+            });
+
+    });
+
+    function tijiao() {
+
+        var lunbotu_url = $('#lunbotu_url').val();//图片地址
+        var lunbotu_dz = $('#lunbotu_dz').val();//图片跳转地址
+
+
+        if (lunbotu_url == '' ) {
+            layer.msg('封面图片不能为空!', {icon: 5, time: 1000});
+            return false;
+        }
+        $.ajax({
+            url: "",
+            data: {'img_url':lunbotu_url,'img_dz':lunbotu_dz},
+            type: 'post',
+            dataType: 'json',
+            success: function (date) {
+                if (date.taatus == '200') {
+                    layer.alert(date.msg, {
+                            icon: 6
+                        },
+                        function () {
+                            //关闭当前frame
+                            xadmin.close();
+                            // 可以对父窗口进行刷新
+                            xadmin.father_reload();
+                        });
+                    return false;
+                }else {
+                    layer.msg(date.msg, {icon: 5, time: 1000});
+                }
+
+
+            },
+
+            fail: function (err) {
+
+                alert('请求失败! 请联系管理员');
+
+                location.reload()
+
+            }
+
+        });
+    }
+</script>
+
+</body>
+
+</html>

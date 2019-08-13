@@ -1,0 +1,200 @@
+<!--头部-->
+{include file="common/top"}
+<!-- banner -->
+<div class="bg-fff pb10">
+    <ul class="lm-r4 clearfix">
+        <li><a href="{:url('index/Lawyer/lawyer')}"><i class="ico-pd i-pd5"></i><p>律师团队</p></a></li>
+        <li><a href="{:url('/faluzisi/14')}"><i class="ico-pd i-pd6"></i><p>法律法规</p></a></li>
+        <li><a href="{:url('/faluzisi/23')}"><i class="ico-pd i-pd7"></i><p>国晖动态</p></a></li>
+        <li><a href="{:url('index/about/about')}"><i class="ico-pd i-pd8"></i><p>律所介绍</p></a></li>
+    </ul>
+    <div class="plr15">
+        <div class="law-headlines">
+            <span class="law-hd-bt">律所<br>头条</span>
+            <div class="law-hd-box">
+                <ul class="law-hd-list">
+                    {volist name="homedongtai" id="v" offset="0" length='1' }
+                        <li>
+                            <a href="{:url('/content/','','')}{$v.id}.html">
+                                <marquee direction=left>{$v.article_name}</marquee>
+                            </a>
+                        </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  -->
+
+<!--  -->
+<div class="bg-fff plr15 pb10 mt20">
+    <div class="tit-nav tit-nav-borb">
+        <h2>律所动态</h2>
+        <a href="" class="more-btn fr">more<i class="ico-pd i-pd44"></i></a>
+    </div>
+    <ul class="txt-list">
+        {volist name="homedongtai" id="v" offset="1" length='4'}
+        <?php $v["addtime"] = strtr($v["addtime"], '-', '.');?>
+            <li><a href="{:url('/content/','','')}{$v.id}.html"><time>{$v.addtime|mb_substr=0,9,'utf-8'}</time>{$v.article_name}</a></li>
+        {/volist}
+    </ul>
+</div>
+
+<!--  -->
+<div class="bg-fff plr15 pb20 mt10">
+    <div class="tit-nav tit-nav-borb">
+        <h2>办案动态</h2>
+        <a href="badt/default.htm" class="more-btn fr">more<i class="ico-pd i-pd44"></i></a>
+    </div>
+    <ul class="case-list">
+        {volist name="hongmebanan" id="v" offset="0" length='4'}
+        <?php $v["addtime"] = strtr($v["addtime"], '-', '.');?>
+                <li>
+                    <a href="{:url('/content/','','')}{$v.id}.html">
+                        <h2 class="ect">{$v.article_name}</h2>
+                        <div class="info"><time>{$v.addtime|mb_substr=0,9,'utf-8'}</time></div>
+                            <!--<div class="lawyer">-->
+                                        <!--<img src="../../https@wnbhw-upload.oss-cn-hangzhou.aliyuncs.com/c494c5c2-8004-4c7d-92a3-6d082dc8a70d.jpg@x-oss-process=image_2fformat,jpg_2finterlace,1_2fresize,m_fill,h_200,w_200.jpg" />-->
+                            <!--</div>-->
+                    </a>
+                </li>
+        {/volist}
+                <!--<li>-->
+                    <!--<a href="../badt/123079.html">-->
+                        <!--<h2 class="ect">詹勇律师前往成都市看守所第13次会见涉嫌集资诈骗罪的Y某</h2>-->
+                        <!--<div class="info"><span>会见</span><time>2019.05.09</time></div>-->
+                            <!--<div class="lawyer">-->
+                                        <!--<img src="../../https@wnbhw-upload.oss-cn-hangzhou.aliyuncs.com/c494c5c2-8004-4c7d-92a3-6d082dc8a70d.jpg@x-oss-process=image_2fformat,jpg_2finterlace,1_2fresize,m_fill,h_200,w_200.jpg" />-->
+                            <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+    </ul>
+    <ul class="record-num mt5">
+        <li><b class="count-number" data-to="3457" data-speed="1500">3457</b><p>经手案件</p></li>
+        <li><b class="count-number" data-to="14540" data-speed="1500">14540
+            </b><p>会见记录</p></li>
+        <li><b class="count-number" data-to="2865" data-speed="1500">2865</b><p>出庭记录</p></li>
+    </ul>
+</div>
+
+<div class="bg-fff pltb20-lr15 pt10 mt10">
+    <div class="tit-nav">
+        <h2>刑事辩护专家</h2>
+        <a href="lstd/default.htm" class="more-btn fr">more<i class="ico-pd i-pd44"></i></a>
+    </div>
+    <div class="drag-scroll-bar expert-show mb10">
+        <ul class="drag-scroll-nr">
+            {volist name="lawyer" id="v"}
+                    <li class="drag-src-item">
+                        <a href="{:url('/lawyers/','','')}{$v.id}.html">
+                            <img src="{$v.business_img}">
+                            <div class="bg-gradient"></div>
+                            <div class="txt">
+                                <h3>{$v.business_name}</h3>
+                                <!--<p class="f12">首席律师,刑辩专家,博士学位</p>-->
+                            </div>
+                        </a>
+                    </li>
+            {/volist}
+        </ul>
+    </div>
+</div>
+
+
+<a href="JavaScript:;" name="ywulingyu"></a>
+<div class="bg-fff mt10">
+    <div class="tit-nav tit-nav-borb plr15 pt5">
+        <h2>业务范围</h2>
+    </div>
+    <div class="yw-scope">
+        <ul class="yw-fw-list clearfix">
+            <?php $qe = 0;?>
+            {volist name="homelingyu10" id="v"}
+                <li><a href="{:url('/content/','','')}{$v.id}.html"><i class="ico-qd ico-se i-qe-<?php echo $qe+=1;?>"></i><p>{$v.article_name}</p></a></li>
+            {/volist}
+        </ul>
+        <div class="more-btn-block bort0">展开更多</div>
+    </div>
+</div>
+<!--<div class="bg-fff plr15 tit-nav-borb mt10">-->
+    <!--<div class="tit-nav">-->
+        <!--<h2>亲办案例</h2>-->
+        <!--<a href="lsal/default.htm" class="more-btn fr">more<i class="ico-pd i-pd44"></i></a>-->
+    <!--</div>-->
+        <!--<a href="../lsal/116408.html" class="case-tui">-->
+            <!--<img>-->
+            <!--<div class="bg-gradient"></div>-->
+            <!--<span class="icon-tui">推荐</span>-->
+            <!--<div class="point-txt">-->
+                <!--<h2>被告人涉嫌抢夺，曾莉律师做罪轻辩护——被告人舒某社涉嫌抢夺，曾莉律师担任其辩护人，依法维护被告人舒某的合法权益</h2>-->
+                <!--<time>2017-11-30</time>-->
+            <!--</div>-->
+        <!--</a>-->
+        <!--<ul class="case-list mt5">-->
+                <!--<li>-->
+                    <!--<a href="../lsal/116407.html">-->
+                        <!--<h2 class="ect">被告人涉嫌抢夺，陈武、汤愚泰律师做罪轻辩护-->
+<!--——被告人肖某某社涉嫌抢夺，陈武、汤愚泰律师担任其辩护人，依法维护被告人肖某某的合法权益。</h2>-->
+                        <!--<div class="info"><span>其他案件</span><time>2017-11-30</time></div>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="../lsal/116406.html">-->
+                        <!--<h2 class="ect">C某贩卖毒品案二审 艾述洪律师、苏镜祥律师为其成功保命-->
+<!--</h2>-->
+                        <!--<div class="info"><span>毒品犯罪</span><time>2017-11-28</time></div>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="../lsal/116405.html">-->
+                        <!--<h2 class="ect">用专业与精湛的辩护，用无私的亲情挽救涉嫌贩毒的新手爸爸Y某——艾述洪律师亲办案例-->
+	<!--</h2>-->
+                        <!--<div class="info"><span>毒品犯罪</span><time>2017-11-28</time></div>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="../lsal/116404.html">-->
+                        <!--<h2 class="ect">	被告人涉嫌贩卖毒品、容留他人吸毒，管宇律师做罪轻辩护-->
+<!--——被告人徐某某因涉嫌贩卖毒品、容留他人吸毒，管宇律师担任其辩护人，依法维护被告人徐某某的合法权益</h2>-->
+                        <!--<div class="info"><span>毒品犯罪</span><time>2017-11-28</time></div>-->
+                    <!--</a>-->
+                <!--</li>-->
+        <!--</ul>-->
+<!--</div>-->
+<!--<div class="bg-fff plr15">-->
+    <!--<ul class="tag-list clearfix">-->
+                <!--<li><a href="lsal/qbhs/default.htm">取保候审</a></li>-->
+                <!--<li><a href="lsal/bqs/default.htm">不起诉</a></li>-->
+                <!--<li><a href="lsal/wzbh/default.htm">无罪辩护</a></li>-->
+                <!--<li><a href="lsal/hx/default.htm">缓刑</a></li>-->
+                <!--<li><a href="lsal/esgq/default.htm">二审改判</a></li>-->
+                <!--<li><a href="lsal/zwfz/default.htm">职务犯罪</a></li>-->
+                <!--<li><a href="lsal/dpfz/default.htm">毒品犯罪</a></li>-->
+                <!--<li><a href="lsal/sxbh/default.htm">死刑辩护</a></li>-->
+                <!--<li><a href="lsal/qyjfz/default.htm">企业家犯罪</a></li>-->
+                <!--<li><a href="lsal/bianhuci/default.htm">辩护词</a></li>-->
+                <!--<li><a href="lsal/qt/default.htm">其他案件</a></li>-->
+    <!--</ul>-->
+<!--</div>-->
+
+<div class="lx-wm-bar bg-fff plr15 pb20 mt10 mb20">
+    <div class="tit-nav"><h2>联系我们</h2></div>
+    <div class="map">
+        <a target="_blank" href=https://map.baidu.com/search/%E5%B9%BF%E5%B7%9E%E5%9B%BD%E6%99%96%E5%BE%8B%E5%B8%88%E4%BA%8B%E5%8A%A1%E6%89%80/@12616666.850738289,2632079.778054412,16.49z?querytype=s&da_src=shareurl&wd=%E5%B9%BF%E5%B7%9E%E5%9B%BD%E6%99%96%E5%BE%8B%E5%B8%88%E4%BA%8B%E5%8A%A1%E6%89%80&c=257&src=0&wd2=%E5%B9%BF%E5%B7%9E%E5%B8%82%E5%A4%A9%E6%B2%B3%E5%8C%BA&pn=0&sug=1&l=15&b=(12608924,2628530;12624284,2636026)&from=webmap&biz_forward=%7B%22scaler%22:1,%22styles%22:%22pl%22%7D&sug_forward=8e01824352278a571e1d11cc&device_ratio=1">
+            <img style="display: block;" src="__IMG__/images/index_v2/20190513145541.png">
+        </a>
+    </div>
+    <ul>
+        <li><span>联系电话：</span>4008-368-966</li>
+        <li><span>传&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;真：</span>028-85315641</li>
+        <li><span>联系地址：</span>广州市天河区体育东路114号财富广场西塔15楼</li>
+    </ul>
+</div>
+<script type="text/javascript">
+    $('.ovh ul li').eq(1).addClass('currer').siblings().removeClass('currer');
+</script>
+    <!-- footer -->
+<!-- 底部 -->
+{include file="common/bottom"}

@@ -1,0 +1,143 @@
+<!--头部-->
+{include file="common/top"}
+<!-- banner -->
+<div class="bg-fff pb10">
+    <ul class="lm-r4 clearfix">
+        <li><img src="__IMG__/images/index_v2/icon-zy/01.png" alt=""><p>品牌律所</p></li>
+        <li><img src="__IMG__/images/index_v2/icon-zy/06.png" alt=""><p>专业团队</p></li>
+        <li><img src="__IMG__/images/index_v2/icon-zy/03.png" alt=""><p>服务保障</p></li>
+        <li><img src="__IMG__/images/index_v2/icon-zy/08.png" alt=""><p>免费咨询</p></li>
+        <li><img src="__IMG__/images/index_v2/icon-zy/05.png" alt=""><p>专注刑事</p></li>
+        <li><img src="__IMG__/images/index_v2/icon-zy/02.png" alt=""><p>收费透明</p></li>
+        <li><img src="__IMG__/images/index_v2/icon-zy/07.png" alt=""><p>高效执行</p></li>
+        <li><img src="__IMG__/images/index_v2/icon-zy/04.png" alt=""><p>超强实战</p></li>
+    </ul>
+</div>
+
+<!-- team -->
+<div class="bg-fff pltb20-lr15 mt10 pt30">
+    <!--<div class="ls-title">庭立方<span>广州</span>四川卓安律师事务所</div>-->
+    <!--<div class="ls-title">广东<span>广州</span>国晖律所事务所</div>-->
+    <div class="tit-nav mt10">
+        <h2>办案风采</h2>
+        <a href="{:url('/faluzisi/24')}" class="more-btn fr">more<i class="ico-pd i-pd44"></i></a>
+    </div>
+        <div class="sroll-img-bar">
+            <span class="sor-mun">
+                <i class="cur"></i>
+                <i></i>
+            </span>
+            <ul class="sor-img">
+                    <li>
+                        <a href="{:url('/content/','','')}{$crknowledge.1.id}.html" class="team-show">
+                            <img src="/uploads/WechatIMG216.jpeg">
+                            <div class="bg-gradient"></div>
+                            <div class="point-txt">
+                                <div class="tit">{$crknowledge.0.article_name}...</div>
+                                <?php $crknowledge[0]["addtime"] = strtr($crknowledge[0]["addtime"], '-', '.');?>
+                                <p class="f10">{$crknowledge.0.addtime|mb_substr=0,10,'utf-8'}</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('/content/','','')}{$crknowledge.1.id}.html" class="team-show">
+                            <img src="/uploads/WechatIMG217.jpeg">
+                            <div class="bg-gradient"></div>
+                            <div class="point-txt">
+                                <div class="tit">{$crknowledge.1.article_name}...</div>
+                                <?php $crknowledge[1]["addtime"] = strtr($crknowledge[1]["addtime"], '-', '.');?>
+                                <p class="f10">{$crknowledge.1.addtime|mb_substr=0,10,'utf-8'}</p>
+                            </div>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+            <hr class="mt20">
+        <div class="dt-ovh">
+            <div class="bg"></div>
+            <div class="dt-sroll">
+                    <?php $biao = 11; ?>
+                    {volist name="hongmebanan" id="v" key="k"}
+                        <div class="dt-item">
+                            <i class="dot"></i>
+                            <a href="{:url('/content/','','')}{$v.id}.html" class="ect">[<?php echo $biao = $biao-1; ?>] {$v.article_name}</a>
+                            <?php $v["addtime"] = strtr($v["addtime"], '-', '.');?>
+                            <time>{$v.addtime|mb_substr=0,10,'utf-8'}</time>
+                        </div>
+                    {/volist}
+
+            </div>
+        </div>
+</div>
+
+<div class="bg-fff pltb20-lr15 pt10 mt10">
+    <div class="tit-nav">
+        <h2>刑事辩护专家</h2>
+        <a href="{:url('index/Lawyer/lawyer')}" class="more-btn fr">more<i class="ico-pd i-pd44"></i></a>
+    </div>
+        <div class="drag-scroll-bar expert-show mb10">
+            <ul class="drag-scroll-nr">
+                {volist name="lawyer" id="v"}
+                    <li class="drag-src-item">
+                        <a href="{:url('/lawyers/','','')}{$v.id}.html">
+                            <img src="{$v.business_img}">
+                            <div class="bg-gradient"></div>
+                            <div class="txt">
+                                <h3>{$v.business_name}</h3>
+                                <!--<p class="f12">首席律师,刑辩专家,博士学位</p>-->
+                            </div>
+                        </a>
+                    </li>
+                {/volist}
+            </ul>
+        </div>
+</div>
+
+<div class="bg-fff plr15 mt10">
+    <div class="tit-nav tit-nav-borb">
+        <h2>律所案例呈现</h2>
+        <a href="{:url('/faluzisi/22')}" class="more-btn fr">more<i class="ico-pd i-pd44"></i></a>
+    </div>
+        <ul class="case-list">
+            {volist name='mobilenews' id="v" offset="0" length='5'}
+            <?php $v["addtime"] = strtr($v["addtime"], '-', '.');?>
+                <li>
+                    <a href="{:url('/content/','','')}{$v.id}.html">
+                        <h2 class="ect">{$v.article_name}</h2>
+                        <div class="info"><span>{$v.fat_name}</span><time>{$v.addtime|mb_substr=0,10,'utf-8'}</time></div>
+                    </a>
+                </li>
+            {/volist}
+        </ul>
+</div>
+<hr>
+<div class="yw-scope bg-fff">
+    <ul class="yw-fw-list clearfix">
+                {volist name="mobilenewss" id="v"}
+                <li><a href="{:url('/faluzisi/','','')}{$v.article_sort}.html"><em>{$v['count(*)']}</em><p>{$v.sort_name}</p></a></li>
+                {/volist}
+    </ul>
+    <div class="more-btn-block bort0">展开更多</div>
+</div>
+
+<div class="index-map mt10">
+    <img src="__IMG__/images/index_v2/bg2.png" alt="" class="map">
+    <div class="txt">
+        <img src="__IMG__/images/index_v2/map-logo.png" alt="">
+        <p>
+            广东国晖(广州)律师事务所<br>
+            广东国晖(深圳)律师事务所<br>
+            广东国晖(北京)律师事务所<br>
+            广东国晖(杭州)律师事务所<br>
+            广东国晖(上海)律师事务所<br>
+            广东国晖(天津)律师事务所<br>
+            广东国晖(佛山)律师事务所<br>
+            广东国晖(长沙)律师事务所<br>
+            广东国晖(江门)律师事务所<br>
+            广东国晖(合肥)律师事务所<br>
+            广东国晖(哈尔滨)律师事务所<br>
+        </p>
+    </div>
+</div>
+    <!-- 底部 -->
+{include file="common/bottom"}

@@ -1,0 +1,73 @@
+<!--头部-->
+{include file="common/top"}
+<!-- banner -->
+<div class="bg-fff pltb20-lr15">
+    <div class="tit-nav tit-nav-borb">
+        <h2>刑事辩护专家</h2>
+    </div>
+        <ul class="law-team">
+            {volist name="lawyer" id="v"}
+                <li>
+                    <a href="{:url('/lawyers/','','')}{$v.id}.html">
+                            <span class="photo"><img alt="" src="{$v.business_img}" /></span>
+                        <p class="name">{$v.business_name}</p>
+                        <p class="bq">
+                                    <span>资深律师</span>
+                                    <span>刑辩专家</span>
+                                    <span>博士学位</span>
+                        </p>
+                        <p class="intro"> {$v.business_gzjy|strip_tags|mb_substr=0,65,'utf-8'}</p>
+                    </a>
+                </li>
+            {/volist}
+        </ul>
+
+        <!--<div class="page-bar2 bg-fff">-->
+            <!--<ul class="page-pop">-->
+                <!--<li class="first-page prev-disabled"><a href="javascript:;"><i class="icon-line"></i><i class="ico-pd i-pd35"></i></a></li>-->
+                    <!--<li><a href="javascript:;" class="prev-current">1</a></li>-->
+                    <!--<li><a href="lstd/list_2/default.htm" class="">2</a></li>-->
+                    <!--<li><a href="lstd/list_3/default.htm" class="">3</a></li>-->
+                    <!--<li><a href="lstd/list_4/default.htm" class="">4</a></li>-->
+                    <!--<li><a href="lstd/list_5/default.htm" class="">5</a></li>-->
+                <!--<li class="last-page "><a href="lstd/list_9/default.htm"><i class="ico-pd i-pd36"></i><i class="icon-line"></i></a></li>-->
+            <!--</ul>-->
+            <!--<a href="javascript:;" class="prev-p prev-disabled"><i class="ico-pd i-pd35"></i></a>-->
+            <!--<button type="button">1</button>-->
+            <!--<a href="lstd/list_2/default.htm" class="next-p "><i class="ico-pd i-pd36"></i></a>-->
+        <!--</div>-->
+</div>
+
+<!-- weizhi -->
+<div class="weizhi">
+    <a href="../default.htm">首页</a><i class="ico-pd i-pd44"></i><a href="default.htm">刑事律师</a><i class="ico-pd i-pd44"></i><span>列表</span>
+</div>
+<!-- 弹框：背景 -->
+<div id="bg-black"></div>
+
+<!-- 弹框：预约 -->
+<div class="yuyue-pop" id="yuyue-popup">
+    <span class="pop-close"></span>
+    <ul>
+        <li>
+            <textarea placeholder="请简单描述你的问题" id="content"></textarea>
+        </li>
+        <li>
+            <input type="text" name="" id="mobile" placeholder="请输入你的手机号">
+        </li>
+        <li class="yanzm">
+            <input type="text" name="" id="code" placeholder="请输入图形验证码">
+            <div class="code">
+                <img src="../lawyer/getvalidatecode.jpg" onclick="this.src = '/lawyer/getvalidatecode?time=' + (new Date()).getTime();" id="imgCode" alt="点击刷新" title="点击重新获取验证码" class="yzm-btn" />
+                
+            </div>
+        </li>
+        <li class="tips"></li>
+        <li><a href="javascript:;" id="subContent" class="u-btn u-btn-block">提交</a></li>
+    </ul>
+</div>
+
+
+    <!-- footer -->
+<!-- 底部 -->
+{include file="common/bottom"}

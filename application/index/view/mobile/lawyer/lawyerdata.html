@@ -1,0 +1,189 @@
+<!--头部-->
+{include file="common/top"}
+    
+
+
+
+<div class="lawyer-bg">
+
+    <span class="photo"><img src="{$lawyerdata.business_img}" alt=""/></span>
+    <p class="name">{$lawyerdata.business_name}</p>
+    <div class="bq">
+                <span>资深律师</span>
+                <span>刑辩专家</span>
+                <span>博士学位</span>
+    </div>
+</div>
+
+
+
+<div class="lawyer-info bg-fff mt10">
+    <div class="plr15">
+        <div class="tit-nav tit-nav-borb">
+            <h2>个人简介</h2>
+        </div>
+    </div>
+    <div class="lr-ovh">
+        <div class="law-intro">
+            <p style="margin-top: 0px; margin-bottom: 32px; padding: 0px; line-height: 36px; color: rgb(43, 43, 43); font-family: 微软雅黑; white-space: normal; background-color: rgb(255, 255, 255);">
+            {$lawyerdata.business_content}
+            </p>
+            <p style="margin-top: 0px; margin-bottom: 32px; padding: 0px; line-height: 36px; color: rgb(43, 43, 43); font-family: 微软雅黑; white-space: normal; background-color: rgb(255, 255, 255);">
+                {$lawyerdata.business_gzjy}
+            </p><p><br/></p></div>
+    </div>
+        <div class="more-btn-block">展开更多</div>
+</div>
+
+    <!--相册-->
+    <!--<div class="bg-fff mt10 mien-box">-->
+        <!--<div class="tit-nav tit-nav-borb">-->
+            <!--<h2>个人风采</h2>-->
+        <!--</div>-->
+        <!--<div class="drag-scroll-bar lawyer-mien">-->
+            <!--<div class="my-gallery drag-scroll-nr">-->
+                    <!--<figure class="drag-src-item">-->
+                        <!--<a href="../../https@wnbhw-upload.oss-cn-hangzhou.aliyuncs.com/b41a9f8f-4bf7-43e3-8058-32fef9383011.jpg@x-oss-process=image_2fformat,jpg_2finterlace,1.jpg" data-size="300x300" data-id="105"><img src="../../https@wnbhw-upload.oss-cn-hangzhou.aliyuncs.com/b41a9f8f-4bf7-43e3-8058-32fef9383011.jpg@x-oss-process=image_2fformat,jpg_2finterlace,1.jpg" alt="Image description" /></a>-->
+                    <!--</figure>-->
+                    <!--<figure class="drag-src-item">-->
+                        <!--<a href="../../https@wnbhw-upload.oss-cn-hangzhou.aliyuncs.com/c0d16f43-863c-449a-b465-4ca06a22e90c.jpg@x-oss-process=image_2fformat,jpg_2finterlace,1.jpg" data-size="300x300" data-id="104"><img src="../../https@wnbhw-upload.oss-cn-hangzhou.aliyuncs.com/c0d16f43-863c-449a-b465-4ca06a22e90c.jpg@x-oss-process=image_2fformat,jpg_2finterlace,1.jpg" alt="Image description" /></a>-->
+                    <!--</figure>-->
+                    <!--<figure class="drag-src-item">-->
+                        <!--<a href="../../https@wnbhw-upload.oss-cn-hangzhou.aliyuncs.com/ac773fb2-3e62-4368-af6d-077110193d91.jpg@x-oss-process=image_2fformat,jpg_2finterlace,1.jpg" data-size="300x300" data-id="103"><img src="../../https@wnbhw-upload.oss-cn-hangzhou.aliyuncs.com/ac773fb2-3e62-4368-af6d-077110193d91.jpg@x-oss-process=image_2fformat,jpg_2finterlace,1.jpg" alt="Image description" /></a>-->
+                    <!--</figure>-->
+                    <!--<figure class="drag-src-item">-->
+                        <!--<a href="../../https@wnbhw-upload.oss-cn-hangzhou.aliyuncs.com/4125e2ed-4649-4f38-b2e5-4d06dda7c32b.jpg@x-oss-process=image_2fformat,jpg_2finterlace,1.jpg" data-size="300x300" data-id="102"><img src="../../https@wnbhw-upload.oss-cn-hangzhou.aliyuncs.com/4125e2ed-4649-4f38-b2e5-4d06dda7c32b.jpg@x-oss-process=image_2fformat,jpg_2finterlace,1.jpg" alt="Image description" /></a>-->
+                    <!--</figure>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="bg-fff mt10 plr15 pb15">
+        <div class="tit-nav tit-nav-borb">
+            <h2>最近动态</h2>
+            <a href="1/dt/default.htm" class="more-btn fr">more<i class="ico-pd i-pd44"></i></a>
+        </div>
+        <div class="dt-ovh">
+            <div class="bg"></div>
+            <div class="dt-sroll">
+                {volist name="crknowledge" id="v"}
+                    <div class="dt-item">
+                        <i class="dot"></i>
+                        <a href="{:url('/content/','','')}{$v.id}.html" class="ect">{$v.article_name}</a>
+                        <?php $v["addtime"] = strtr($v["addtime"], '-', '.');?>
+                        <time>{$v.addtime|mb_substr=0,10,'utf-8'}</time>
+                    </div>
+                {/volist}
+            </div>
+        </div>
+    </div>
+    <div class="bg-fff mt10 plr15">
+        <div class="tit-nav tit-nav-borb">
+            <h2>成功案例</h2>
+            <a href="1/lsal/default.htm" class="more-btn fr">more<i class="ico-pd i-pd44"></i></a>
+        </div>
+        <ul class="case-list">
+                <li>
+                    <a href="../lsal/107610.html">
+                        <h2 class="ect">是正常借款关系还是虚构债权债务侵占公司资产？  W某涉嫌职务侵占罪 成安律师、李重律师围绕争议焦点进行无罪辩护  最终取保候审</h2>
+                        <div class="info"><span>职务犯罪</span><time>2015.04.28</time></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="../lsal/59893.html">
+                        <h2 class="ect">涉嫌非法经营，本网律师为其成功辩护为无罪</h2>
+                        <div class="info"><span>无罪辩护</span><time>2012.06.08</time></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="../lsal/58765.html">
+                        <h2 class="ect">涉嫌“合同诈骗”潜逃多年，终被引渡归案——本网律师成安、陈武为Z某提供侦查阶段的法律帮助</h2>
+                        <div class="info"><span>其他案件</span><time>2012.04.12</time></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="../lsal/49959.html">
+                        <h2 class="ect">盗窃罪一审被判10年有期徒刑，二审成安、艾述洪律师接受委托后，改判缓刑</h2>
+                        <div class="info"><span>缓刑</span><time>2011.07.13</time></div>
+                    </a>
+                </li>
+        </ul>
+    </div>
+
+
+
+<!-- weizhi -->
+<div class="weizhi">
+    <a href="{:url('index/index/index')}">首页</a><i class="ico-pd i-pd44"></i><a href="{:url('index/Crlawyer/crlawyerlst')}">刑事律师</a><i class="ico-pd i-pd44"></i><a href="{:url('index/Lawyer/lawyer')}">列表</a><i class="ico-pd i-pd44"></i><span>详细</span>
+</div>
+
+<!-- 在线预约 -->
+<div class="order-btn" id="yuyue-btn">在线预约</div>
+<!-- 弹框：背景 -->
+<div id="bg-black"></div>
+
+<!-- 弹框：预约 -->
+<div class="yuyue-pop" id="yuyue-popup">
+    <span class="pop-close"></span>
+    <ul>
+        <li>
+            <textarea placeholder="请简单描述你的问题" id="content"></textarea>
+        </li>
+        <li>
+            <input type="text" name="" id="mobile" placeholder="请输入你的手机号">
+        </li>
+        <li class="yanzm">
+            <input type="text" name="" id="code" placeholder="请输入图形验证码">
+            <div class="code">
+                <img src="../lawyer/getvalidatecode.jpg" onclick="this.src = '/lawyer/getvalidatecode?time=' + (new Date()).getTime();" id="imgCode" alt="点击刷新" title="点击重新获取验证码" class="yzm-btn" />
+                
+            </div>
+        </li>
+        <li class="tips"></li>
+        <li><a href="javascript:;" id="subContent" class="u-btn u-btn-block">提交</a></li>
+    </ul>
+</div>
+
+
+<!--  -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg">
+    </div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item">
+            </div>
+            <div class="pswp__item">
+            </div>
+            <div class="pswp__item">
+            </div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter">
+                </div>
+                <!--<button class="pswp__button pswp__button&#45;&#45;close" title="Close (Esc)">X</button>-->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip">
+                </div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button><button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--尾部-->
+
+{include file="common/bottom"}

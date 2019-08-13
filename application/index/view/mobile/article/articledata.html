@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="applicable-device" content="mobile">
+    <meta name="format-detection" content="email=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="address=no;">
+    <title>{if condition="$title['article_name'] == ''"}{$title['home_title']} {else /}{$title.article_name}—刑事辩护网 {/if}</title>
+
+    <meta name="keywords" content="{$title.seogjz}">
+
+    <meta name="description" content="{$title.seoms}"/>
+
+    <link href="__MOBILE__/css/base.css" rel="stylesheet" />
+    <script src="__MOBILE__/js/jquery.js"></script>
+
+</head>
+<body>
+    <!-- header 1 -->
+<header class="header-bar">
+
+        <div class="hd-normal">
+            <span class="hd-back" onclick=" history.go(-1); "><i class="ico-pd i-pid39"></i></span>
+            <span class="hd-diqu2" onclick=" history.go(-1); ">返回</span>
+            <h1>{$title.sort_name}</h1>
+            <span class="hd-menu"><i class="icon-mu"></i></span>
+        </div>
+</header>
+<!-- hd-sub-nav -->
+    <div class="hd-sub-nav" id="hd-sub-nav">
+        <span class="hd-sub-close"><i class="ico-pd i-pd59"></i></span>
+        <div class="ovh">
+            <ul>
+                <li class="currer"><a href="{:url('index/index/index')}"><i class="ico-pd i-pd30"></i>首页</a></li>
+                <li><a href="{:url('index/Crlawyer/crlawyerlst')}"><i style="" class="ico-ed i-pd31"></i>刑事律师</a></li>
+                <li id=""><a href="{:url('index/about/about')}"><i class="ico-ed i-pd32"></i>关于我们</a></li>
+                <li id="lb1"><a href="{:url('/faluzisi/1')}"><i class="ico-ed i-pd33"></i>法律知识</a></li>
+                <li id="lb24"><a href="{:url('/faluzisi/24')}"><i class="ico-ed i-pd34"></i>办案风采</a></li>
+                <li id="lb3"><a href="{:url('/faluzisi/3')}"><i class="ico-ed i-pd35"></i>刑事责任</a></li>
+                <li id="lb23"><a href="{:url('/faluzisi/23')}"><i class="ico-ed i-pd36"></i>国晖动态</a></li>
+                <li id="lb22"><a href="{:url('/faluzisi/22')}"><i class="ico-ed i-pd37"></i>典型案例</a></li>
+            </ul>
+            <div class="hd-sub-b">
+                <p class="f13">专业刑事法律服务平台</p>
+                <a href="tel:4008368966" class="hd-sub-tel">4008-368-966</a>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+<div class="case-detail bg-fff pltb20-lr15">
+    <h1>{$articledata.article_name}</h1>
+    <?php $articledata["addtime"] = strtr($articledata["addtime"], '-', '.');?>
+    <div class="info"><time>{$articledata.addtime|mb_substr=0,10,'utf-8'}</time><span>{$articledata.article_xbt}</span><span>浏览：22次</span><span><em>会见</em></span></div>
+    <article class="det-nr">
+     <p>
+         {$articledata.article_content}
+     </p>
+    </article>
+    <!--<div class="mt20">-->
+                    <!--<a href="../lstd/6/default.htm" class="lr-coad">-->
+                        <!--<img src="../../https@wnbhw-upload.oss-cn-hangzhou.aliyuncs.com/cf9e765b-834b-4221-99be-44104507b72b.png@x-oss-process=image_2fformat,jpg_2finterlace,1_2fresize,m_fill,h_200,w_200.jpg">-->
+                        <!--<h3><span class="tag">参与律师</span>陈茜</h3>-->
+                        <!--<p>共有 190 篇 办案动态</p>-->
+                    <!--</a>-->
+    <!--</div>-->
+</div>
+
+<div class="bg-fff plr15 mt10">
+    <div class="tit-nav tit-nav-borb">
+        <h2>最新动态</h2>
+        <a href="../sichuan/badt/default.htm" class="more-btn fr">more<i class="ico-pd i-pd44"></i></a>
+    </div>
+    <ul class="case-list">
+        {volist name="crknowledge" id="v" offset="0" length="4"}
+        <?php $v["addtime"] = strtr($v["addtime"], '-', '.');?>
+        <li>
+            <a href="">
+                <h2 class="ect">{$v.article_name}</h2>
+                <div class="info"><span>{$v.fat_name}</span>
+                    <time>{$v.addtime|mb_substr=0,10,'utf-8'}</time>
+                </div>
+            </a>
+        </li>
+        {/volist}
+    </ul>
+</div>
+<!-- weizhi -->
+<div class="weizhi">
+    {if condition="$title['fat_name'] == null"} <a href="{:url('index/index/index')}">首页</a>><span>{$title.sort_name}</span>
+
+    {else /} <a href="{:url('index/index/index')}">首页</a>><a href="{:url('/faluzisi/','','')}{$title.id}.html">{$title.fat_name}</a>><span>{$title.sort_name}</span>
+
+    {/if}
+
+</div>
+<div class="none">
+    <input type="hidden" id="Id" value="123069" />
+</div>
+
+    <!-- footer -->
+<footer id="footer-bar">
+    <div class="ft-box">
+        <img src="__IMG__/images/index_v2/logo.png" alt="" class="logo">
+        <p class="f12">国内唯一专注刑事辩护法律服务平台</p>
+        <a href="tel_3a4000148149" class="ft-tel">4000-148-149</a>
+        <p class="copyright">蜀ICP备09008220<br>&copy; 2019 SCXSLS.COM </p>
+    </div>
+</footer>
+    <a href="javascript:;" class="go-top">&uarr;</a>
+    <script src="__MOBILE__/js/common.js"></script>
+    <script src="__MOBILE__/js/widget/post.js"></script>
+</body>
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1276685431'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/stat.php%3Fid%3D1276685431%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+
+<script>
+
+    var _hmt = _hmt || [];
+
+    (function() {
+
+        var hm = document.createElement("script");
+
+        hm.src = "https://hm.baidu.com/hm.js?ef017b0d5e81cc4f0e7373eafc15dfc2";
+
+        var s = document.getElementsByTagName("script")[0];
+
+        s.parentNode.insertBefore(hm, s);
+
+    })();
+
+</script>
+
+
+</html>

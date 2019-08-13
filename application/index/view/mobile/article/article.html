@@ -1,0 +1,104 @@
+<!--头部-->
+{include file="common/top"}
+
+
+<!-- content -->
+<!--  -->
+<div class="tab-bar bg-fff pt10">
+    <div class="tab-nav tab-nav-center">
+        <span class="currer">{$title.sort_name}</span>
+    </div>
+    <div id="child">
+        <ul class="tag-item tag-item-show">
+            {volist name='sort' id='v'}
+
+            <li><a href="{:url('/faluzisi/','','')}{$v.id}.html">{$v.sort_name}</a></li>
+
+            {/volist}
+        </ul>
+    </div>
+</div>
+<div class="bg-fff plr15 pt5 mt10">
+    <div class="tit-nav tit-nav-borb">
+        <h2>{$title.sort_name}</h2>
+        <a href="http://m.scxsls.com/zdxswt/" class="more-btn fr">more<i class="ico-pd i-pd44"></i></a>
+    </div>
+    <ul class="case-list num-list">
+
+        {volist name='anli' id='v' key="k" offset="0" length='5'}
+        <li>
+            <a href="{:url('/content/','','')}{$v.id}.html">
+                <span class="num">{$k}.</span>
+                <h2 class="ect">{$v.article_name}</h2>
+                <div class="info"><span>阅读：<?php echo rand(1000,2000);?></span></div>
+            </a>
+        </li>
+        {/volist}
+
+    </ul>
+
+    <div class="page-bar2 bg-fff">
+        <a href="javascript:;" class="prev-p prev-disabled"><i class="ico-pd i-pid35"></i></a>
+        <button type="button"><?php if (isset($_GET['page'])){echo $_GET['page'];}else{echo 1;} ?></button>
+        <a href="?page=<?php if(isset($_GET['page'])){echo $_GET['page']+1;}else{echo 2;}?>" class="next-p "><i class="ico-pd i-pid36"></i></a>
+    </div>
+</div>
+<!--  -->
+<div class="bg-fff plr15 pt5 pb10 mt10">
+    <div class="tit-nav tit-nav-borb">
+        <h2>热门刑事知识</h2>
+    </div>
+</div>
+<!--  -->
+<div class="bg-fff plr15 pt5 mt10">
+    <div class="tit-nav tit-nav-borb">
+        <h2>最新知识推荐</h2>
+        <a href="http://m.scxsls.com/xszs/xfzl/" class="more-btn fr">more<i class="ico-pd i-pd44"></i></a>
+    </div>
+    <ul class="case-list mt5">
+        {volist name="crknowledge" id="v" offset="0" length="6"}
+        <?php $v["addtime"] = strtr($v["addtime"], '-', '.');?>
+            <li>
+                <a href="">
+                    <h2 class="ect">{$v.article_name}</h2>
+                    <div class="info"><span>{$v.fat_name}</span>
+                        <time>{$v.addtime|mb_substr=0,10,'utf-8'}</time>
+                    </div>
+                </a>
+            </li>
+        {/volist}
+    </ul>
+</div>
+
+<!-- weizhi -->
+<div class="weizhi">
+
+    {if condition="$title['fat_name'] == null"} <a href="{:url('index/index/index')}">首页</a>><span>{$title.sort_name}</span>
+
+    {else /} <a href="{:url('index/index/index')}">首页</a>><a href="">{$title.fat_name}</a>><span>{$title.sort_name}</span>
+
+    {/if}
+</div>
+
+
+<!--头部-->
+{include file="common/bottom"}
+
+
+<!--&lt;!&ndash; footer &ndash;&gt;-->
+<!--<footer id="footer-bar">-->
+<!--<div class="ft-box">-->
+<!--<img src="./常见刑事知识_刑事犯罪法律知识-为你辩护网_files/logo.png" alt="" class="logo">-->
+<!--<p class="f12">国内唯一专注刑事辩护法律服务平台</p>-->
+<!--<a href="tel:4000148149" class="ft-tel">4000-148-149</a>-->
+<!--<p class="copyright">蜀ICP备09008220<br>© 2019 SCXSLS.COM </p>-->
+<!--</div>-->
+<!--</footer>-->
+<!--<a href="javascript:;" class="go-top" style="display: block;">↑</a>-->
+<!--<script async="" charset="UTF-8" src="./常见刑事知识_刑事犯罪法律知识-为你辩护网_files/meiqia.js.下载"></script><script src="./常见刑事知识_刑事犯罪法律知识-为你辩护网_files/hm.js.下载"></script><script src="./常见刑事知识_刑事犯罪法律知识-为你辩护网_files/jquery-3.2.1.min.js.下载"></script>-->
+<!--<script src="./常见刑事知识_刑事犯罪法律知识-为你辩护网_files/common.js.下载"></script>-->
+<!---->
+<!--<script src="./常见刑事知识_刑事犯罪法律知识-为你辩护网_files/Swipe.js.下载"></script>-->
+
+
+<!--</body></html>-->

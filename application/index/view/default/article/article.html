@@ -1,0 +1,51 @@
+<!--头部-->
+{include file="common/top"}
+    <div class="wrap">
+        <div class="page-content cf">
+            <div class="">
+                <div class="site">
+                    {if condition="$title['fat_name'] == null"} <a href="{:url('index/index/index')}">首页</a>><a href="" >{$title.sort_name}</a>
+                    {else /} <a href="{:url('index/index/index')}">首页</a>><a href="">{$title.fat_name}</a>><a href="" >{$title.sort_name}</a>
+                    {/if}
+                </div>
+                <div class="main-title cf">
+                    <h2 class="title">{$title.sort_name}</h2>
+                </div>
+                <div class="main-content">
+                    <div class="industry_lunbo">
+                        <div class="news_lunbo cf">
+                            <div class="soer1-0">
+                                <div class="soer1-1">
+                                    <div>
+                                        <ul>
+                                            {volist name='sort' id='v'}
+                                            <li><a href="{:url('/faluzisi/','','')}{$v.id}.html">{$v.sort_name}</a></li>
+                                            {/volist}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="industry_main cf">
+                        <ul class="cf">
+                            {volist name='anli' id='v'}
+                            <li>
+                                <a href="{:url('/content/','','')}{$v.id}.html" target="_blank">{$v.article_name}</a><i>{$v.addtime|mb_substr=0,7,'utf-8'}</i>
+                            </li>
+                            {/volist}
+                        </ul>
+                    </div>
+                    <div class="page">
+                        <div class="am-fr">
+                            {$anli->render()}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--头部-->
+{include file="common/bottom"}
