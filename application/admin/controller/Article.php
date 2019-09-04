@@ -41,7 +41,6 @@ class Article extends Common {
                 ->field('a.*,b.sort_name')
                 ->paginate(12);
         }
-
         $sort = db('sh_sort')->select();
         $sort = $this->Sort_Recursive($sort);
         return view('article/articlelst',['articles'=>$articles,'sort'=>$sort,'cateid'=>$cateid,'search'=>$search]);
@@ -79,6 +78,7 @@ class Article extends Common {
                 ->update([
                     'article_name'=>$date['article_name'],
                     'article_xbt'=>$date['article_xbt'],
+                    'article_fm'=>$date['artcle_fm'],
                     'seogjz'=>$date['seogjz'],
                     'seoms'=>$date['seoms'],
                     'article_sort'=>$date['article_sort'],
@@ -144,8 +144,6 @@ class Article extends Common {
     }
 
 
-
-
     public function file() {
         $domain= Request::instance()->domain();
         $file = request()->file('upfile');
@@ -160,7 +158,7 @@ class Article extends Common {
         if ($info->getSaveName()) {
             $data['msg'] = '上传成功!';
             $data['taatus'] = '200';
-            $data['url'] = $domain.DS.'upload'.DS.$info->getSaveName();
+            $data['url'] = DS.'upload'.DS.$info->getSaveName();
 
             $data['way'] = 'true';
             return json($data);

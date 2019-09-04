@@ -1,1 +1,51 @@
-<!--头部-->{include file="common/top"}        <div class="wrap">            <div class="page-content cf">                <div class="site"><a title="首页" href="{:url('index/index/index')}">首页</a>><span>专业团队</span></div>                <div class="team-ind-left">                    <div class="team-top">                        <h2><a href="lawyer.html">专业的律师团队</a></h2>                        <div class="bunnka">强化责任观念 修炼气质风度 树立精品意识 提供系统服务</div>                        <div class="syuninn cf">                            <dl class="cf">                                {volist name='lawyer' id='v'}                                <dl class="cf">                                    <a href="{:url('/lawyers/','','')}{$v.id}.html" target="_blank"><img src="{$v.business_img}" alt="" width="168" height="220"></a>                                    <dd class="edit_con_original">                                    <a href="{:url('/lawyers/','','')}{$v.id}.html"><span>{$v.business_name}</span></a>                                        <p>{$v.business_gzjy|strip_tags|mb_substr=0,200,'utf-8'}</p>                                    </dd>                                </dl>                                {/volist}                            </dl>                        </div>                    </div>                    <div class="team-bottom cf">                        <div class="performance">                            <h2><a href="{:url('/faluzisi/24')}">办案风采</a></h2>                            <div class="performance-bd">                                <ul>                                    {volist name='hongmebanan' id='v' offset="0" length='4'}                                        <li>                                            <a href="{:url('/content/','','')}{$v.id}.html" target="_blank">{$v.article_name|mb_substr=0,40,'utf-8'}</a>                                        </li>                                    {/volist}                                </ul>                                <a class="more team-more" title="" href="{:url('/faluzisi/24')}">了解更多风采</a>                            </div>                        </div>                        <div class="news">                            <h2><a href="{:url('/faluzisi/23')}">国晖动态</a></h2>                            <div class="news-list">                                <ul>                                    {volist name='hongmebanan' id='v' offset="0" length='4'}                                    <li style="width: 565px;"><a href="{:url('/content/','','')}{$v.id}.html" target="_blank">{$v.article_name|mb_substr=0,40,'utf-8'}</a></li>                                    {/volist}                                </ul>                                <a href="{:url('/faluzisi/23')}" title="" class="more team-more">更多国晖动态</a>                            </div>                        </div>                    </div>                </div>            </div>        </div></section><!--头部-->{include file="common/bottom"}
+﻿<!--    head-->
+{include file="common/head"}
+<!--    栏目-->
+{include file="common/column"}
+
+<script type="text/javascript">
+    function f1() {
+        $(".nav_bg .c_wrap .nav ul li a").removeClass('one');
+        $(".nav_bg .c_wrap .nav ul li:eq(3) a").addClass('one');
+    }
+    f1();
+</script>
+
+<div class="header_c2"></div>
+
+
+<div class="lm_name">
+    <div class="c_wrap">专业团队</div>
+</div>
+<div class="lm_pic lm_pic_nonav" style="background-image: url(__INDEX__/images/lawyer.jpg)">
+
+    <div class="c_wrap">
+        <div class="in_txt in_txt1"><span><h2>专业团队</h2><b>Professionals</b></span></div>
+    </div>
+</div>
+<!--内容-->
+<div class="main">
+    <div class="td_part2">
+        <div class="wrap">
+            <div class="SYCms_Tem_PageList_15">
+                <div class="list">
+                    <ul class="cf">
+                        {volist name='lawyer' id='v'}
+                            <li>
+                                <a href="{:url('/lawyers/','','')}{$v.id}.html" class="tr_sc" target="_blank">
+                                    <dl>
+                                        <dt><img src="{$v.business_img}"></dt>
+                                        <dd><b>{$v.business_name}</b><i>龙岗分所</i></dd>
+                                    </dl>
+                                </a>
+                            </li>
+                        {/volist}
+                    </ul>
+                    <div class="page"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+{include file="common/bottom"}

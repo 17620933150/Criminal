@@ -30,6 +30,19 @@
 <div class="layui-fluid">
     <div class="layui-row">
         <form class="layui-form" onSubmit="return false;">
+
+            <div class="layui-form-item">
+                <label for="seogjz" class="layui-form-label">
+                    <span class="x-red">*</span>标题
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="title" value="{$jsao.title}" name="title" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    <span class="x-red">*</span>选填
+                </div>
+            </div>
+
             <div class="layui-form-item">
                 <label for="seogjz" class="layui-form-label">
                     <span class="x-red">*</span>SEO关键字
@@ -52,14 +65,6 @@
                     <span class="x-red">*</span>选填
                 </div>
             </div>
-            <div class="layui-form-item">
-                <label for="guohuijs" class="layui-form-label">
-                    <span class="x-red">*</span>国晖介绍
-                </label>
-                <div class="layui-input-inline">
-                    <div type="text/plain" id="guohuijs" style="width:1000px;height:240px;"><p>{$jsao.guohuijs}</p></div>
-                </div>
-            </div>
 
             <div class="layui-form-item">
                 <label for="bg_img1" class="layui-form-label">
@@ -72,44 +77,72 @@
                     </div>
                 </div>
                 <div class="layui-form-mid layui-word-aux">
-                    <input type="hidden" id="bg_img1" value="{$jsao.bg_img1}">
-                    <img id="img_img1" style="width: 300px;" src="{$jsao.bg_img1}" alt="">
-                </div>
-
-                <div class="layui-input-inline">
-                    <div class="layui-upload-drag" id="test2">
-                        <i class="layui-icon"></i>
-                        <p>点击上传，或将文件拖拽到此处</p>
-                    </div>
-                </div>
-                <div class="layui-form-mid layui-word-aux">
-                    <input type="hidden" id="bg_img2" value="{$jsao.bg_img2}">
-                    <img id="img_img2" style="width: 300px;" src="{$jsao.bg_img2}" alt="">
-                </div>
-
-                <div class="layui-input-inline">
-                    <div class="layui-upload-drag" id="test3">
-                        <i class="layui-icon"></i>
-                        <p>点击上传，或将文件拖拽到此处</p>
-                    </div>
-                </div>
-                <div class="layui-form-mid layui-word-aux">
-                    <input type="hidden" id="bg_img3" value="{$jsao.bg_img3}">
-                    <img id="img_img3" style="width: 300px;" src="{$jsao.bg_img3}" alt="">
+                    <input type="hidden" id="bg_img1" value="{$jsao.js_img}">
+                    <img id="img_img1" style="width: 300px;" src="{$jsao.js_img}" alt="">
                 </div>
             </div>
 
             <div class="layui-form-item">
-                <label for="lianxiwomen" class="layui-form-label">
-                    <span class="x-red">*</span>联系我们
+                <label for="seoms" class="layui-form-label">
+                    <span class="x-red">*</span>电话
                 </label>
                 <div class="layui-input-inline">
-                    <div type="text/plain" id="lianxiwomen" style="width:1000px;height:240px;"><p>{$jsao.lianxiwomen}</p></div>
+                    <input type="text" id="phone" value="{$jsao.phone}" name="phone" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    <span class="x-red">*</span>选填
                 </div>
             </div>
 
             <div class="layui-form-item">
-                <label for="lianxiwomen" class="layui-form-label">
+                <label for="seoms" class="layui-form-label">
+                    <span class="x-red">*</span>传真
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="fax" value="{$jsao.fax}" name="fax" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    <span class="x-red">*</span>选填
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label for="seoms" class="layui-form-label">
+                    <span class="x-red">*</span>邮编
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="zipcode" value="{$jsao.zipcode}" name="zipcode" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    <span class="x-red">*</span>选填
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label for="seoms" class="layui-form-label">
+                    <span class="x-red">*</span>地址
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="address" value="{$jsao.address}" name="address" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    <span class="x-red">*</span>选填
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label for="guohuijs" class="layui-form-label">
+                    <span class="x-red">*</span>国晖介绍
+                </label>
+                <div class="layui-input-inline">
+                    <div type="text/plain" id="guohuijs" style="width:1000px;height:240px;"><p>{$jsao.js_content}</p></div>
+                </div>
+            </div>
+
+
+
+            <div class="layui-form-item">
+                <label for="guohuijs" class="layui-form-label">
                 </label>
                 <button class="layui-btn"  onclick="tijiao()">
                     修改
@@ -120,7 +153,6 @@
 </div>
 <script>
 
-  var lianxiwomenum = UM.getEditor('lianxiwomen');
   var guohuijsum = UM.getEditor('guohuijs');
 
     layui.use(['form', 'layer','upload'], function () {
@@ -152,51 +184,6 @@
 
             }
         });
-        //拖拽上传
-        upload.render({
-            elem: '#test2'
-            ,url: "{:url('admin/article/file')}"
-            ,field:'upfile'
-            ,done: function(res){
-                if (res.taatus == '200') {
-                    layer.msg(res.msg, {
-                            icon: 6, time: 1000
-                        },
-                        function () {
-                            $('#img_img2').attr('src',res.url);
-                            $('#bg_img2').attr('value',res.url)
-                        });
-                    return false;
-                }else {
-                    layer.msg(res.msg, {icon: 5, time: 1000});
-                }
-
-
-            }
-        });
-        //拖拽上传
-        upload.render({
-            elem: '#test3'
-            ,url: "{:url('admin/article/file')}"
-            ,field:'upfile'
-            ,done: function(res){
-                if (res.taatus == '200') {
-                    layer.msg(res.msg, {
-                            icon: 6, time: 1000
-                        },
-                        function () {
-                            $('#img_img3').attr('src',res.url);
-                            $('#bg_img2').attr('value',res.url)
-                        });
-                    return false;
-                }else {
-                    layer.msg(res.msg, {icon: 5, time: 1000});
-                }
-
-
-            }
-        });
-
         //自定义验证规则
         form.verify({
             nikename: function (value) {
@@ -234,25 +221,39 @@
     });
 
     function tijiao() {
+        var jstitle = $('#title').val();
         var seogjz = $('#seogjz').val();
         var seoms = $('#seoms').val();
-        var bg_img1 = $('#bg_img1').val();//办公图片1
-        var bg_img2 = $('#bg_img2').val();//办公图片2
-        var bg_img3 = $('#bg_img3').val();//办公图片3
-        var guohuijs = UM.getEditor('guohuijs').getContent();//内容
-        var lianxiwomen = UM.getEditor('lianxiwomen').getContent();//内容
-
-        if (guohuijs == '' ) {
-            layer.msg('国晖介绍不能为空!', {icon: 5, time: 1000});
+        var js_img = $('#bg_img1').val();//律所介绍封面
+        var phone = $('#phone').val();//电话
+        var fax = $('#fax').val();//传真
+        var zipcode = $('#zipcode').val();//邮编
+        var address = $('#address').val();//地址
+        var js_content = UM.getEditor('guohuijs').getContent();//内容
+        if (jstitle == '' ) {
+            layer.msg('标题不能为空!', {icon: 5, time: 1000});
             return false;
         }
-        if (lianxiwomen == '' ) {
-            layer.msg('联系我们不能为空!', {icon: 5, time: 1000});
+        if (js_img == '' ) {
+            layer.msg('封面不能为空不能为空!', {icon: 5, time: 1000});
+            return false;
+        }
+        if (phone == '' ) {
+            layer.msg('电话不能为空!', {icon: 5, time: 1000});
+            return false;
+        }
+        if (address == '' ) {
+            layer.msg('地址不能为空!', {icon: 5, time: 1000});
+            return false;
+        }
+
+        if (js_content == '' ) {
+            layer.msg('国晖介绍不能为空!', {icon: 5, time: 1000});
             return false;
         }
         $.ajax({
             url: "",
-            data: {'guohuijs':guohuijs,'seogjz':seogjz,'seoms':seoms,'bg_img1':bg_img1,'bg_img2':bg_img2,'bg_img3':bg_img3,'lianxiwomen':lianxiwomen},
+            data: {'title':jstitle,'phone':phone,'js_content':js_content,'seogjz':seogjz,'seoms':seoms,'js_img':js_img,'fax':fax,'zipcode':zipcode,'address':address},
             type: 'post',
             dataType: 'json',
             success: function (date) {

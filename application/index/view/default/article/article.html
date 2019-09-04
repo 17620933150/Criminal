@@ -1,51 +1,56 @@
-<!--头部-->
-{include file="common/top"}
-    <div class="wrap">
-        <div class="page-content cf">
-            <div class="">
-                <div class="site">
-                    {if condition="$title['fat_name'] == null"} <a href="{:url('index/index/index')}">首页</a>><a href="" >{$title.sort_name}</a>
-                    {else /} <a href="{:url('index/index/index')}">首页</a>><a href="">{$title.fat_name}</a>><a href="" >{$title.sort_name}</a>
-                    {/if}
-                </div>
-                <div class="main-title cf">
-                    <h2 class="title">{$title.sort_name}</h2>
-                </div>
-                <div class="main-content">
-                    <div class="industry_lunbo">
-                        <div class="news_lunbo cf">
-                            <div class="soer1-0">
-                                <div class="soer1-1">
-                                    <div>
-                                        <ul>
-                                            {volist name='sort' id='v'}
-                                            <li><a href="{:url('/faluzisi/','','')}{$v.id}.html">{$v.sort_name}</a></li>
-                                            {/volist}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="industry_main cf">
-                        <ul class="cf">
-                            {volist name='anli' id='v'}
-                            <li>
-                                <a href="{:url('/content/','','')}{$v.id}.html" target="_blank">{$v.article_name}</a><i>{$v.addtime|mb_substr=0,7,'utf-8'}</i>
-                            </li>
-                            {/volist}
-                        </ul>
-                    </div>
-                    <div class="page">
-                        <div class="am-fr">
-                            {$anli->render()}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!--头部-->
+﻿<!--    head-->
+{include file="common/head"}
+<!--    栏目-->
+{include file="common/column"}
+
+<script type="text/javascript">
+    function f1() {
+        $(".nav_bg .c_wrap .nav ul li a").removeClass('one');
+        $(".nav_bg .c_wrap .nav ul li:eq(4) a").addClass('one');
+    }
+    f1();
+</script>
+<div class="header_c2"></div>
+
+
+<div class="lm_name">
+    <div class="c_wrap">新闻中心</div>
+</div>
+<div class="lm_pic "
+     style="background-image: url(__INDEX__/images/newsback.jpg)">
+    <div class="nav2 nav2_li3">
+        <div class="c_wrap">
+            <a href="{:url('/faluzisi/22')}" class="one">国晖案例</a>
+            <a href="{:url('/faluzisi/23')}" class="">国晖动态</a>
+            <a href="{:url('/faluzisi/1')}" class="">法律知识</a>
+            <a href="{:url('/faluzisi/14')}" class="">法律法规</a>
+        </div>
+    </div>
+    <div class="c_wrap">
+        <div class="in_txt in_txt1"><span><h2>{$title.article_name}</h2></span></div>
+    </div>
+</div>
+<!--内容-->
+<div class="main">
+    <div class="xw_list">
+        <div class="wrap">
+            <div class="list">
+                <ul>
+                    {volist name='anli' id='v'}
+                    <li class="tr_sc">
+                        <a href="{:url('/content/','','')}{$v.id}.html" target="_blank"><span class="time"><b>{$v.addtime|mb_substr=8,2,'utf-8'}</b>{$v.addtime|mb_substr=0,7,'utf-8'}</span>
+                            <span class="img"><img src="{$v.article_fm}"/></span>
+                            <span class="tit"><span class="tit2">{$v.article_name}</span></span>
+                        </a>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+            <div class="page">
+                {$anli->render()}
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
 {include file="common/bottom"}

@@ -46,6 +46,10 @@ class Lawyer extends Common {
                 ->update([
                     'business_name'=>$date['business_name'],
                     'business_img'=>$date['business_img'],
+                    'business_phone'=>$date['business_phone'],
+                    'business_fax'=>$date['business_fax'],
+                    'business_gmail'=>$date['business_gmail'],
+                    'business_Language'=>$date['business_Language'],
                     'business_content'=>$date['business_content'],
                     'business_gzjy'=>$date['business_gzjy'],
                 ]);

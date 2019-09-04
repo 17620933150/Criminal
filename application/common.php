@@ -12,7 +12,7 @@
 // 应用公共文件
 // 判断手机还是pc
 if (\think\Request::instance()->isMobile()) {
-    define('VIEW_PATH', __DIR__ . '/index/view/mobile/');
+    define('VIEW_PATH', __DIR__ . '/index/view/default/');
 } else {
     define('VIEW_PATH', __DIR__ . '/index/view/default/');
 }

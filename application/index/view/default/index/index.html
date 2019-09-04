@@ -1,1 +1,323 @@
-<!--头部-->{include file="common/top"}    <div class="wrap cf"><!--        <div class="zmzt">--><!--            <div class="zmzt-tit">--><!--                <h2>特别关注</h2>--><!--            </div>--><!--            <div class="zmzt-list">--><!--                <div>--><!--                    <a href="">贪污罪</a>--><!--                    <a href="">受贿罪</a>--><!--                    <a href="">赌博罪</a>--><!--                    <a href="">抢劫罪</a>--><!--                    <a href="">毒品犯罪</a>--><!--                    <a href="">非法经营罪</a>--><!--                    <a href="">挪用公款罪</a>--><!--                    <a href="">挪用资金罪</a>--><!--                    <a href="">妨害公务罪</a>--><!--                    <a href="">聚众斗殴罪</a>--><!--                    <a href="">寻衅滋事罪</a>--><!--                    <a href="">敲诈勒索罪</a>--><!--                    <a href="" class="hidden-xs">非法持有毒品罪</a>--><!--                </div>--><!--                <div>--><!--                    <a href="">盗窃罪</a>--><!--                    <a href="">诈骗罪</a>--><!--                    <a href="">强奸罪</a>--><!--                    <a href="">绑架罪</a>--><!--                    <a href="">玩忽职守</a>--><!--                    <a href="">故意杀人罪</a>--><!--                    <a href="">故意伤害罪</a>--><!--                    <a href="">非法拘禁罪</a>--><!--                    <a href="">危险驾驶罪</a>--><!--                    <a href="">交通肇事罪</a>--><!--                    <a href="">职务侵占罪</a>--><!--                    <a href="" class="hidden-xs">集资诈骗罪</a>--><!--                    <a href="">更多<span class="hidden-xs">刑事</span>罪名 +</a>--><!--                </div>--><!--            </div>--><!--        </div>-->        <div class="inner-content">            <div class="main-top cf">                <div class="performance">                    <h2 class="red-title"><a href="{:url('/faluzisi/22')}">国晖案例</a></h2>                    <div class="performance-bd">                        <ul>                            {volist name='homeanli' id='v' offset="0" length='10'}                            <li><a href="{:url('/content/','','')}{$v.id}.html" target='_blank'>{$v.article_name}</a></li>                            {/volist}                        </ul>                        <a class="more newest" href="{:url('/faluzisi/22')}">了解更多案例</a>                    </div>                </div>                <div class="news-bg">                    <div class="news">                        <div class="news-hot">                            <h2 class="red-title news-active"><a href="{:url('/faluzisi/23')}">国晖动态</a></h2>                            <div class="news-pic">                                <a href="{:url('/content/','','')}{$homedongtai.0.id}.html" target="_blank">                                    <img src="__INDEX__/upload/02383e26be7f04084acf00ab9ffdd05f.png"/>                                </a>                            </div>                            <div class="title">                                <h3>                                    <a href="{:url('/content/','','')}{$homedongtai.0.id}.html" target="_blank">{$homedongtai.0.article_name}</a><i>{$homedongtai.0.addtime|mb_substr=0,7,'utf-8'}</i>                                </h3></div>                            <p>                                {$homedongtai.0.article_content|strip_tags|mb_substr=0,150,'utf-8'}                            </p>                            <?php unset($homedongtai['0']);?>                        </div>                    </div>                    <div class="news-list">                        <ul>                            {volist name='homedongtai' id='v'offset="0" length='4'}                            <li><a href="{:url('/content/','','')}{$v.id}.html" target="_blank">{$v.article_name}</a><!--<i>01/14.2019</i>--></li>                            {/volist}                        </ul>                        <a class="more" title="" href="{:url('/faluzisi/23')}">更多国晖动态</a>                    </div>                </div>            </div>            <div class="main-center">                <a href="{:url('index/about/about')}"> <img src="__INDEX__/upload/20190226142829.png"/> </a>            </div>            <div class="main-bottom cf" style="width: 1150px;margin-left: 0px; ">                <h2 class="red-title biaoti"><a style=" color: #000;" href="{:url('index/business/business')}">业务领域</a></h2>                <div class="biaoti1-1">                    广州国晖(广州)律师事务所是一家提供包括非诉业务、明商诉讼、刑事诉讼等全面法律服务的综合性律师事务所，致力于成为中国最优秀的专业化、团队化、国际化的综合性律师事务所。                </div>                <ul class="cf business" style="margin: -30px 0 0 -30px; padding-top: 30px;">                    {volist name='homelingyu' id='v'}                    <!--<li>-->                        <!--<div class="left-bottom-hd">-->                            <!--<h3><a href="{:url('/content/','','')}{$v.id}.html">{$v.article_name}</a></h3>-->                            <!--<p class="edit_con_original">{$v.article_content|strip_tags|mb_substr=0,60,'utf-8'}</p></div>-->                    <!--</li>-->                    <li><h3><a href="{:url('/content/','','')}{$v.id}.html"> {$v.article_name}</a></h3>                        <p>{$v.article_content|strip_tags|mb_substr=0,60,'utf-8'}</p>                        <a class="businessa" href="{:url('/content/','','')}{$v.id}.html">查看详细 &gt;</a>                    </li>                    {/volist}                </ul>                <a class="More" title="" href="{:url('index/business/business')}">+查看更多</a>            </div>            <div class="law1-0">                <div class="law1-1">                    <img src="/uploads/20190322103549.png" alt="">                    <div class="law1-2">                        法律法规<span><a href="{:url('/faluzisi/14')}">+查看更多</a></span>                    </div>                    <ul class="law1-3" >                        {volist name="falvfag" id="v"}                        <li><a href="{:url('/content/','','')}{$v.id}.html">>&nbsp;[{$v.fat_name}] {$v.article_name|mb_substr=0,25,'utf-8'}</a><span>[{$v.addtime|mb_substr=0,7,'utf-8'}]</span></li>                        {/volist}                    </ul>                </div>                <div class="law1-1" style="margin-right: 0px;float: right;">                    <img src="/uploads/20190322103559.png" alt="">                    <div class="law1-2">                        委托律师<span><a href="{:url('/faluzisi/5')}">+查看更多</a></span>                    </div>                    <ul class="law1-3" >                        {volist name="weituolvs" id="v"}                        <li><a href="{:url('/content/','','')}{$v.id}.html">>&nbsp;[{$v.fat_name}] {$v.article_name|mb_substr=0,25,'utf-8'} </a><span>[{$v.addtime|mb_substr=0,7,'utf-8'}]</span></li>                        {/volist}                    </ul>                </div>            </div>        </div>        <div class="sidebar">            <div class="typical">                <h2 class="red-title"><a href="{:url('/faluzisi/24')}">办案风采</a></h2>                <ul>                    {volist name='hongmebanan' id='v'}                    <li><a href="{:url('/content/','','')}{$v.id}.html" target="_blank">{$v.article_name|mb_substr=0,40,'utf-8'}</a></li>                    {/volist}                </ul>                <a class="more" title="" href="{:url('/faluzisi/24')}">更多办案风采</a>            </div>        </div>    </div><div class="duty1-4">    <div class="duty1-0">        <div class='duty1-1'>            刑事责任 <a href="{:url('/faluzisi/3')}"> <span>更多>></span></a>        </div>        <img src="/uploads/Snipaste_2019-03-18_16-12-09.png" alt="">        <div class="duty1-2">            <ul>                {volist name="falvzs" id='v'}                <li>                    <div class="duty1-3">                        <a href="{:url('/content/','','')}{$v.id}.html">  [{$v.fat_name}] {$v.article_name|mb_substr=0,25,'utf-8'}</a>                    </div>                    <p>                        {$v.article_content|strip_tags|mb_substr=0,90,'utf-8'}                    </p>                </li>                {/volist}            </ul>        </div>    </div></div></section><!--尾部-->{include file="common/bottom"}
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+          name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>{$title.home_title}</title>
+    <meta name="Keywords" content="{$title.seogjz}"/>
+    <meta name="Description" content="{$title.seoms}"/>
+    <link rel="shortcut icon" href="__INDEX__/images/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="__INDEX__/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="__INDEX__/css/css.css"/>
+    <!--    <script src="Js/FrontJS.js" type="text/javascript"></script>-->
+    <script type="text/javascript" src="__INDEX__/js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="__INDEX__/js/z_all.js"></script>
+    <!--其他文件-->
+    <link rel="stylesheet" type="text/css" href="__INDEX__/css/idangerous.swiper2.7.6.css"/>
+    <link rel="stylesheet" type="text/css" href="__INDEX__/css/ui-select.css">
+    <script type="text/javascript" src="__INDEX__/js/idangerous.swiper2.7.6.min.js"></script>
+    <script type="text/javascript" src="__INDEX__/js/index.js"></script>
+    <script type="text/javascript" src="__INDEX__/js/ui-select.js"></script>
+    <link href="__INDEX__/css/perfect-scrollbar.css" rel="stylesheet">
+    <script src="__INDEX__/js/jquery.mousewheel.js"></script>
+    <script src="__INDEX__/js/perfect-scrollbar.js"></script>
+    <script>
+        //回到顶部
+        $(function () {
+            $('.ui-select').chosen();
+            if ($(window).width() > 1002) {
+                $('.in_part2 .contentHolder').perfectScrollbar();
+            }
+        });
+    </script>
+</head>
+<body class="in_body_load">
+<div id="loading"></div>
+
+<div class="phone_nav">
+    <div class="top">
+        <a href="default.htm" class="a"><img src="__INDEX__/images/logo.png"/></a>
+        <a href="#" class="but" id="phone_but"><i></i></a>
+    </div>
+    <!--   手机端头部 -->
+    <div class="box">
+        <div class="box_con">
+            <ul id="phone_ul">
+                <li>
+                    <a href="{:url('index/index/index')}">首页</a>
+                </li>
+                <li>
+                    <a href="{:url('index/about/about')}">律所介绍</a>
+                    <ol>
+                        <li><a href="{:url('/about')}">国晖介绍</a></li>
+                        <li><a href="{:url('/office')}">国晖办公室</a></li>
+                        <li><a href="{:url('/culture')}">国晖文化</a></li>
+                        <li><a href="{:url('/office')}">发展历程</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="{:url('index/business/business')}">业务领域</a>
+                </li>
+                <li>
+                    <a href="{:url('index/lawyer/lawyer')}">专业团队</a>
+                </li>
+                <li>
+                    <a href="{:url('/faluzisi/22')}">新闻中心</a>
+                    <ol>
+                        <li><a href="{:url('/faluzisi/22')}">国晖案例</a></li>
+                        <li><a href="{:url('/faluzisi/23')}">国晖动态</a></li>
+                        <li><a href="{:url('/faluzisi/1')}">法律知识</a></li>
+                        <li><a href="{:url('/faluzisi/14')}">法律法规</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="{:url('index/faluzisi/Banan')}">办案风采</a>
+                </li>
+                <li>
+                    <a href="{:url('/contactus')}">联系我们</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--PC端头部-->
+<div class="header">
+    <div class="in_wrap cf">
+        <div class="logo"><a href="{:url('index/index/index')}"><img style="width: 247px;" src="__INDEX__/images/logo.png"/></a></div>
+        <div class="nav cf">
+            <ul>
+                <li><a href="{:url('index/index/index')}" class="one">首页</a></li>
+                <li><a href="{:url('index/about/about')}" class="">律所介绍</a></li>
+                <li><a href="{:url('index/business/business')}" class="">业务领域</a></li>
+                <li><a href="{:url('index/lawyer/lawyer')}" class="">专业团队</a></li>
+                <li><a href="{:url('/faluzisi/22')}" class="">新闻中心</a></li>
+                <li><a href="{:url('index/faluzisi/Banan')}" class="">办案风采</a></li>
+                <li><a href="{:url('/contactus')}" class="">联系我们</a></li>
+            </ul>
+            <div class="but">
+                <a href="#" class="ss" id="ss_but"></a>
+
+                <div class="box">
+                    <form action="/search/" method="get" enctype="multipart/form-data" id="top_ss_form">
+                        <input class="submit" type="submit" value="" name=""/>
+                        <b><input type="text" value="" name="text" placeholder="输入搜索内容..."/></b>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--内容-->
+<div class="main">
+    <div class="in_part1" id="in_part1">
+        <ul class="swiper-wrapper">
+            <li class="li swiper-slide" style="background-image: url(__INDEX__/images/105849714b838bf50.jpg)">
+                <div class="wz_bg" id="wz_bg">
+                    <div class="wz">
+                        <div class="wz_img wz_img1"><img src="__INDEX__/images/in_lb_img4.png"/></div>
+                        <div class="wz_img wz_img2"><img src="__INDEX__/images/in_lb_img5.png"/></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="arrow"><i class="arrow-left"></i><i class="arrow-right"></i></div>
+        <div class="swiper_page"><b class="b1">1</b><i class="i2"></i></div>
+    </div>
+    <div class="in_part2">
+        <div class="in_wrap">
+            <div class="in_txt"><span><h2>关于我们</h2><b>About Us</b></span></div>
+            <dl class="cf">
+                <dt><img src=" {$jsao.js_img}"/></dt>
+                <dd>
+                    <div class="logo cf">
+                        <b><img src="__INDEX__/images/logo.png"/></b>
+                    </div>
+                    <div class="tet">
+                        <div class="contentHolder">
+                           {$jsao.js_content}
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="in_part3">
+        <div class="in_wrap">
+            <div class="in_txt"><span><h2>业务领域</h2><b>Practice Areas</b></span></div>
+        </div>
+        <div class="con">
+            <div class="in_wrap">
+                <div class="part1">
+                    <div class="tab_a" id="yyly_a">
+                        <ul class="swiper-wrapper">
+                            {volist name='homelingyu' id='v'}
+                                <li class="swiper-slide">
+                                    <span class="p1"><img src="{$v.bu_sylog}"/></span>
+                                    <span class="p2">{$v.bu_name}</span>
+                                </li>
+                            {/volist}
+                        </ul>
+                    </div>
+                    <div class="arrow"><i class="arrow-left"></i><i class="arrow-right"></i></div>
+                </div>
+            </div>
+            <div class="part2">
+
+                <div class="tab_con" id="yyly_con">
+                    <ul class="swiper-wrapper">
+                        {volist name='homelingyu' id='v'}
+                            <li class="swiper-slide">
+                                <dl>
+                                    <dt><a href="">
+                                        <img src="{$v.bu_syimg}"/></a>
+                                    </dt>
+                                    <dd>
+                                        <a href="{:url('/buda/','','')}{$v.id}.html" class="txt">{$v.bu_name}</a>
+                                        {$v.bu_content|strip_tags|mb_substr=0,50,'utf-8'}
+                                         <a href="{:url('/buda/','','')}{$v.id}.html" class="a"><i>进一步了解</i></a>
+                                    </dd>
+                                </dl>
+                            </li>
+                        {/volist}
+
+                    </ul>
+                    <div class="arrow"><i class="arrow-left"></i><i class="arrow-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="in_part4">
+        <div class="in_wrap">
+            <div class="in_txt">
+                <span>
+                    <h2>新闻资讯</h2>
+                    <b>News</b>
+                </span>
+            </div>
+            <div class="con">
+                <ul class="cf">
+                    {volist name='mobilenews' id='v'}
+                    <li>
+                        <dl>
+                            <dt>
+                                <a href="{:url('/content/','','')}{$v.id}.html" class="tr_sc" target="_blank">
+                                    <span><b>{$v.addtime|mb_substr=8,2,'utf-8'}</b><i>{$v.addtime|mb_substr=0,7,'utf-8'}</i></span>
+                                    <img src="{$v.article_fm}"/>
+                                </a>
+                            </dt>
+                            <dd>
+                                <a href="" class="tr_sc" target="_blank">{$v.article_name}</a>
+                            </dd>
+                        </dl>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="in_part5" style="background-image: url(__INDEX__/images/lawyerbock.jpg);">
+        <div class="in_wrap">
+            <div class="in_txt in_txt1"><span><h2>专业团队</h2><b>Professionals</b></span></div>
+
+            <div class="SYCms_Tem_PageList_15">
+                <div class="list" style="text-align:center;">
+                    <ul class="cf" style="">
+                        {volist name='lawyer' id='v'}
+                        <li>
+                            <a href="{:url('/lawyers/','','')}{$v.id}.html" class="tr_sc" target="_blank">
+                                <dl>
+                                    <dt><img src="{$v.business_img}"></dt>
+                                    <dd><b>{$v.business_name}</b><i>龙岗分所</i></dd>
+                                </dl>
+                            </a>
+                        </li>
+                        {/volist}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="in_part6">
+        <div class="in_wrap">
+            <div class="in_txt"><span><h2>联系我们</h2><b>Contact us</b></span></div>
+            <!--PC端-->
+            <div class="section3">
+                <div class="dsj_list">
+                    <div class="ul ul_l">
+                        <div class="ul_a">
+
+                            <a href="Overview/Offices/140933c36516bb-8.html" class="a">
+                                <i></i><b>龙岗</b>
+                                <dl>
+                                    <dt><img src="__INDEX__/images/0000-1.png"/></dt>
+                                    <dd>
+                                        <div class="txt"><b>龙岗分所</b><i>LongGang</i><span>{$jsao.phone} </span></div>
+                                        <div class="tet">
+                                            <ul>
+                                                <li>传真：{$jsao.fax}</li>
+                                                <li>邮编：{$jsao.zipcode}</li>
+                                            </ul>
+                                            <ul>
+                                                <li>地址：{$jsao.address}</li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="li_one">
+
+                    </div>
+                    <div class="ul ul_r">
+                        <div class="ul_a">
+
+                        </div>
+                    </div>
+
+                    <div class="dsj_l"><a href="#"></a></div>
+                    <div class="dsj_r"><a href="#"></a></div>
+                </div>
+            </div>
+            <!--移动端-->
+            <div class="lxwm" id="lxwm">
+                <ul class="swiper-wrapper"
+                    style="width: 4875px; transform: translate3d(-375px, 0px, 0px); transition-duration: 0s; height: 350px;">
+                    <li class="swiper-slide"
+                        style="width: 375px; height: 350px;">
+                        <a href="/Overview/Offices/Beijing/" class="a">
+                            <dl>
+                                <dt><img src="__INDEX__/images/0000-1.png"></dt>
+                                <dd>
+                                    <div class="txt">
+                                        <b>龙岗分所</b><i>LongGang</i>
+                                        <span>{$jsao.phone}</span>
+                                    </div>
+                                    <div class="tet">
+                                        <ul>
+                                            <li>传真：{$jsao.fax}</li>
+                                            <li>邮编：{$jsao.zipcode}</li>
+                                        </ul>
+                                        <ul>
+                                            <li>地址：{$jsao.address}</li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </a>
+                    </li>
+                </ul>
+                <div class="arrow"><i class="arrow-left"></i><i class="arrow-right"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+{include file="common/bottom"}

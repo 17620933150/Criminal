@@ -1,0 +1,35 @@
+﻿<!--    head-->
+{include file="common/head"}
+<!--    栏目-->
+{include file="common/column"}
+
+<div class="header_c2"></div>
+
+
+<div class="lm_name">
+    <div class="c_wrap">联系我们</div>
+</div>
+<div class="lm_pic lm_pic_nonav" style="background-image: url(__INDEX__/images/contachback.jpg)">
+    <div class="c_wrap">
+        <div class="in_txt in_txt1"><span><h2>联系我们</h2><b>Careers</b></span></div>
+    </div>
+</div>
+<!--内容-->
+<div class="main">
+    <div class="jrwm_zzy">
+        <div class="wrap">
+            <div class="con">
+                <h2 class="h2">联系我们<span class="time">发布日期：{$about.addtime}</span></h2>
+                <div class="nr">
+                    <!--                    <div class="h3"><span>地址</span></div>-->
+                    <div class="txt">
+                       {$about.contactos}
+                    </div>
+                </div>
+                <div class="btn"><a href="#" class="scjl" onclick="$('#form_jl').fadeIn();return false;">留言</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+{include file="common/bottom"}

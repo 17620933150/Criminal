@@ -1,0 +1,52 @@
+﻿<!--    head-->
+{include file="common/head"}
+<!--    栏目-->
+{include file="common/column"}
+
+<script type="text/javascript">
+    function f1() {
+        $(".nav_bg .c_wrap .nav ul li a").removeClass('one');
+        $(".nav_bg .c_wrap .nav ul li:eq(1) a").addClass('one');
+    }
+    f1();
+</script>
+
+<div class="header_c2"></div>
+
+<div class="lm_name">
+    <div class="c_wrap">本所介绍</div>
+</div>
+<div class="lm_pic" style="background-image: url(__INDEX__/images/jsaoback.jpg)">
+    <div class="nav2 nav2_li5">
+        <div class="c_wrap">
+            <a href="{:url('/about')}" class="">国晖介绍</a>
+            <a href="{:url('/office')}" class="">国晖办公室</a>
+            <a href="{:url('/culture')}" class="one">国晖文化</a>
+            <a href="{:url('/office')}" class="">发展历程</a>
+        </div>
+    </div>
+    <div class="c_wrap">
+        <div class="in_txt in_txt1"><span><h2>国晖文化</h2><b>Culutre</b></span></div>
+    </div>
+</div>
+<div class="main">
+    <div class="jzjwh">
+        <div class="wrap">
+            <div class="con">
+                <div class="h2">“国晖”之寓意</div>
+                <div class="txt">
+                    <p align="left">
+                    中国博大之人文文化，浓缩到为人，非&ldquo;君（子）&rdquo;莫属，更上即为&ldquo;贤哲圣人&rdquo;，自非常人可企。故&ldquo;君&rdquo;字之内涵，也是博大丰富的。然若从儒、道、释等中国文化核心要素或派系角度看&ldquo;君&rdquo;基本是儒家的。为&ldquo;君&rdquo;乃是儒家之核心理念。国晖乃有德有道有业有为之人，<strong>国晖乃内修自强以致外济惠人之人，国晖乃立己立人达己达人以致社会是也。</strong>
+                    </p>
+                    <p align="left">
+                        &nbsp;</p>
+                    <p align="left">
+                        若为事业而非投机，修为国晖乃开业之先本。是故国晖之同仁须是秉持国晖理念之人。于内，<strong>以国晖之道共事相互惠泽</strong>；于外，<strong>以国晖之道谋事相互惠泽</strong>。此乃&ldquo;国晖&rdquo;之核心要义。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+{include file="common/bottom"}

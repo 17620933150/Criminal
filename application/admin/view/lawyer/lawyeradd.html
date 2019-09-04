@@ -42,6 +42,50 @@
                 </div>
             </div>
             <div class="layui-form-item">
+                <label for="business_name" class="layui-form-label">
+                    <span class="x-red">*</span>电话
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="business_phone" value="" name="business_phone" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    <span class="x-red">*</span>选填
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="business_name" class="layui-form-label">
+                    <span class="x-red">*</span>传真
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="business_fax" value="" name="business_fax" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    <span class="x-red">*</span>选填
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="business_name" class="layui-form-label">
+                    <span class="x-red">*</span>邮箱
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="business_gmail" value="" name="business_gmail" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    <span class="x-red">*</span>选填
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="business_name" class="layui-form-label">
+                    <span class="x-red">*</span>工作语言
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="business_Language" value="" name="business_Language" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    <span class="x-red">*</span>选填
+                </div>
+            </div>
+            <div class="layui-form-item">
                 <label for="business_img" class="layui-form-label">
                     <span class="x-red">*</span>律师头像
                 </label>
@@ -55,7 +99,6 @@
                     <input type="hidden" id="business_img" value="">
                     <img id="img_img1" style="width: 300px;" src="" alt="">
                 </div>
-
             </div>
             <div class="layui-form-item">
                 <label for="business_content" class="layui-form-label">
@@ -163,7 +206,10 @@
 
     function tijiao() {
         var business_name = $('#business_name').val();//律师姓名
-        var business_img = $('#business_img').val();//律师头像
+        var business_phone = $('#business_phone').val();//电话
+        var business_fax = $('#business_fax').val();//传真
+        var business_gmail = $('#business_gmail').val();//邮箱
+        var business_Language = $('#business_Language').val();//工作语言
         var business_content = UM.getEditor('business_content').getContent();//律师详情
         var business_gzjy = UM.getEditor('business_gzjy').getContent();//工作经验
 
@@ -185,7 +231,7 @@
         }
         $.ajax({
             url: "",
-            data: {'business_name':business_name,'business_img':business_img,'business_content':business_content,'business_gzjy':business_gzjy},
+            data: {'business_name':business_name,'business_img':business_img,'business_content':business_content,'business_gzjy':business_gzjy,'business_phone':business_phone,'business_fax':business_fax,'business_gmail':business_gmail,'business_Language':business_Language},
             type: 'post',
             dataType: 'json',
             success: function (date) {

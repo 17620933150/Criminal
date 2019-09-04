@@ -1,0 +1,45 @@
+﻿<!--    head-->
+{include file="common/head"}
+<!--    栏目-->
+{include file="common/column"}
+
+<script type="text/javascript">
+    function f1() {
+        $(".nav_bg .c_wrap .nav ul li a").removeClass('one');
+        $(".nav_bg .c_wrap .nav ul li:eq(1) a").addClass('one');
+    }
+    f1();
+</script>
+
+<div class="header_c2"></div>
+
+
+<div class="lm_name">
+    <div class="c_wrap">本所介绍</div>
+</div>
+<div class="lm_pic" style="background-image: url(__INDEX__/images/jsaoback.jpg)">
+    <div class="nav2 nav2_li5">
+        <div class="c_wrap">
+            <a href="{:url('/about')}" class="">国晖介绍</a>
+            <a href="{:url('/office')}" class="one">国晖办公室</a>
+            <a href="{:url('/culture')}" class="">国晖文化</a>
+            <a href="{:url('/office')}" class="">发展历程</a>
+        </div>
+    </div>
+    <div class="c_wrap">
+        <div class="in_txt in_txt1"><span><h2>国晖办公室</h2><b>Offices</b></span></div>
+    </div>
+</div>
+<!--内容-->
+<div class="main">
+    <div class="bandongs">
+        <div class="wrap">
+            <div class="con">
+                办公室照片
+                <div class="img"><img src="__INDEX__/images/2017/10/22/22465213446682ad2-b_Cut350250.jpg"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+{include file="common/bottom"}

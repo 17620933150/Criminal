@@ -1,0 +1,139 @@
+﻿<!--    head-->
+{include file="common/head"}
+<!--    栏目-->
+{include file="common/column"}
+
+
+<script type="text/javascript">
+    function f1() {
+        $(".nav_bg .c_wrap .nav ul li a").removeClass('one');
+        $(".nav_bg .c_wrap .nav ul li:eq(2) a").addClass('one');
+    }
+    f1();
+</script>
+<div class="header_c2"></div>
+
+
+<div class="lm_pic2" style="background-image: url(__INDEX__/images/businessdback.jpg)">
+    <div class="c_wrap">
+        <div class="in_txt in_txt1"><span><h2>业务领域</h2><b>Practice Areas</b></span></div>
+    </div>
+</div>
+<!--内容-->
+<div class="main">
+    <div class="ywly_zzy ywly_zzy_go">
+        <div class="wrap">
+            <div class="go"><a href="javascript:history.back(-1)">返回</a></div>
+        </div>
+    </div>
+    <div class="ywly_zzy ywly_zzy1">
+        <div class="wrap">
+            <div class="tit_h2">{$anli.article_name}</div>
+            <div class="txt">
+                {$anli.article_content}
+            </div>
+        </div>
+    </div>
+
+    <div class="ywly_zzy ywly_zzy2">
+        <div class="wrap">
+            <div class="tit_h3">国晖在此领域提供的具体法律服务主要包括：</div>
+            <div class="txt2">
+                <table height="" width="">
+                    <tbody>
+                    <tr>
+                        <td>
+                            金融机构的设立、增资、变更登记
+                        </td>
+                        <td>
+                            金融机构的改制、并购、业务重组
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                金融机构的整顿、解散和破产清算</p>
+                        </td>
+                        <td>
+                            外资金融机构境内投资、设立合资金融机构
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            金融机构合规和风险管理，内控制度设计
+                        </td>
+                        <td>
+                            各类融资业务（包括银团贷款、跨境借贷、出口信贷、项目融资、贸易融资、金融租赁、并购融资）
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            各类债券发行和承销业务（包括企业债券、短期融资券、中期票据、超短期融资券、金融机构次级债、金融债、公司债券、高收益债等）
+                        </td>
+                        <td>
+                            非标投融资业务（包括信托产品、资管产品、银行理财产品及结构性融资）
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            金融衍生品、商品衍生品及各类结构性金融产品和风险控制工具
+                        </td>
+                        <td>
+                            <p>
+                                资产证券化（包括信贷资产证券化及企业资产证券化）</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            金融资产买卖及不良资产处置
+                        </td>
+                        <td>
+                            跨境资本业务（包括信贷、外汇、担保、资产管理、QFII、QDII）
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            金融机构日常法务咨询
+                        </td>
+                        <td>
+                            其他创新性交易结构的安排和设计
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p>
+                    &nbsp;</p>
+            </div>
+            <div class="tit_h3">代表律师</div>
+            <div class="td_part2">
+                <div class="dbls_one_bg">
+                    <div class="dbls_one" id="dbls_one">
+                        <ul class="cf swiper-wrapper">
+                            {volist name='lawyer' id='v'}
+                            <li class="swiper-slide">
+                                <a href="{:url('/lawyers/','','')}{$v.id}.html" target="_blank" class="tr_sc">
+                                    <dl>
+                                        <dt>
+                                            <img src="{$v.business_img}"/>
+                                        </dt>
+                                        <dd><b>{$v.business_name}</b><i>北京总所</i></dd>
+                                    </dl>
+                                </a>
+                            </li>
+                            {/volist}
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="arrow" style="display:none;"><i class="arrow-left"></i><i class="arrow-right"></i></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+<!--底部-->
+{include file="common/bottom"}

@@ -13,10 +13,17 @@ class Index extends Common {
     public function reserveadd() {
         if(request()->isPost()){
             $date = input('post.');
+            if ($date['reservepwd'] !== session('reservepwd')) {
+                $data['msg'] = '请勿重复提交!';
+                $data['taatus'] = '500';
+                $data['way'] = 'false';
+                return json($data);
+            }
             $date['status'] = 0;
             $date['addtime'] = date("Y-m-d H:i:s");
-            $ren = db('cr_reserve')->insert($date);
+            $ren = db('cr_reserve')->strict(false)->insert($date);
             if ($ren == 1) {
+                session('reservepwd',null);
                 $data['msg'] = '预约成功!';
                 $data['taatus'] = '200';
                 $data['way'] = 'true';

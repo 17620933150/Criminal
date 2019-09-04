@@ -1,1 +1,53 @@
-<!--头部-->{include file="common/top"}    <div class="wrap">        <div class="page-content cf">            <div class="" style="    padding: 0px 40px;">                <div class="site">                    {if condition="$title['fat_name'] == null"} <a href="{:url('index/index/index')}">首页</a>><a href="" >{$title.sort_name}</a>><span class="">正文</span>                    {else /} <a href="{:url('index/index/index')}">首页</a>><a href="">{$title.fat_name}</a>><a href="" >{$title.sort_name}</a>><span class="">正文</span>                    {/if}                </div>                <div class="main-title cf">                    <h2 class="title">{$articledata.fat_name}</h2>                </div>                <div class="main-content">                    <div class="news_art">                        <div class="news_cont">                            <!--startprint-->                            <h2 class="tit">{$articledata.article_name}</h2>                            <div class="bon">                                <span>{$articledata.article_xbt}</span>                            </div>                            <div class="edit_con_original news_article">                                {$articledata.article_content}                            </div>                            <!--endprint-->                            <div class="share_n fixed">                            </div>                            <div class="updown">                            <span><a href="{:url('/content/','','')}{$articledata.id-1}.html">上一篇</a></span>                            <span><a href="{:url('/content/','','')}{$articledata.id+1}.html">下一篇</a></span>                            </div>                        </div>                    </div>                </div>            </div>        </div>    </div></section><!--头部-->{include file="common/bottom"}
+﻿<!--    head-->
+{include file="common/head"}
+<!--    栏目-->
+{include file="common/column"}
+
+<script type="text/javascript">
+    function f1() {
+        $(".nav_bg .c_wrap .nav ul li a").removeClass('one');
+        $(".nav_bg .c_wrap .nav ul li:eq(4) a").addClass('one');
+    }
+
+    f1();
+</script>
+<div class="header_c2"></div>
+
+<div class="lm_pic2" style="background-image: url(__INDEX__/images/newsback.jpg)">
+    <div class="c_wrap">
+        <div class="in_txt in_txt1"><span><h2>{$title.article_name}</h2></span></div>
+    </div>
+</div>
+<!--内容-->
+<div class="main">
+    <div class="xw_zzy">
+        <div class="wrap">
+            <div class="syp_xyp">
+                <a href="1017518fe69cdc-9.html" class="syp">上一篇<span>：陈佳律师当选新一届江苏省法学会刑法学研究会理事</span></a>
+                <a href="1418587b9c791d-d.html" class="xyp">下一篇<span>：吴晓捷律师荣登《2018年度LEGALBAND中国律界俊杰榜三十强》榜单</span></a>
+            </div>
+            <div class="con">
+                <h1 class="h1">{$articledata.article_name}</h1>
+                <div class="time">{$articledata.article_xbt}</div>
+                <div class="txt">
+                    {$articledata.article_content}
+                </div>
+                <div class="fx bdsharebuttonbox"><span>分享 : </span>
+                    <a href="#" class="weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+                    <a href="#" class="weixin" data-cmd="weixin" title="分享到微信"></a>
+                </div>
+            </div>
+            <div class="biaoqian">标签：<a href="../search/@text=_25E9_2592_25B1_25E4_25BC_25AF_25E6_2596_25AF">钱伯斯</a>
+                <a href="../search/@text=_25E4_25BA_259A_25E5_25A4_25AA">亚太</a>
+                <a href="../search/@text=_25E6_258F_25AD_25E6_2599_2593">揭晓</a>
+                <a href="../search/@text=_25E5_2590_259B_25E6_25B3_25BD_25E5_2590_259B">国晖</a>
+                <a href="../search/@text=_25E5_25A4_259A_25E9_25A1_25B9">多项</a>
+                <a href="../search/@text=_25E4_25B8_259A_25E5_258A_25A1">业务</a>
+                <a href="../search/@text=_25E9_25A2_2586_25E5_259F_259F">领域</a>
+                <a href="../search/@text=_25E8_258D_25A3_25E7_2599_25BB">荣登</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+{include file="common/bottom"}

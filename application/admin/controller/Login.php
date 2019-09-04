@@ -9,6 +9,10 @@ use think\Request;
 
 class Login extends Controller
 {
+
+    public function phpinfo() {
+        var_dump(phpinfo());
+    }
     //登录
     public function login()
     {

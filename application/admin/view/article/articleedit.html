@@ -52,6 +52,22 @@
             </div>
 
             <div class="layui-form-item">
+                <label for="artcle_fm" class="layui-form-label">
+                    <span class="x-red">*</span>新闻封面
+                </label>
+                <div class="layui-input-inline">
+                    <div class="layui-upload-drag" id="test10">
+                        <i class="layui-icon"></i>
+                        <p>点击上传，或将文件拖拽到此处</p>
+                    </div>
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    <input type="hidden" id="artcle_fm" value="{$article.article_fm}">
+                    <img id="img_img" style="width: 300px;" src="{$article.article_fm}" alt="">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
                 <label for="seogjz" class="layui-form-label">
                     <span class="x-red">*</span>SEO关键字
                 </label>
@@ -105,6 +121,14 @@
     </div>
 </div>
 <script>
+
+    function imageactive(t) {
+        if ($(t).hasClass('imagesactive')) {
+            $(t).removeClass('imagesactive');
+        }else {
+            $(t).addClass('imagesactive');
+        }
+    }
     //实例化富文本编辑器
     var um = UM.getEditor('myEditor');
     layui.use(['form', 'layer','upload'],
@@ -182,7 +206,7 @@
 
         var article_name = $('#article_name').val();//文章标题
         var article_xbt = $('#article_xbt').val();//文章小标题
-        var artcle_fm = $('#artcle_fm').val();//文章封面图片
+        var article_fm = $('#artcle_fm').val();//文章封面图片
         var seogjz = $('#seogjz').val();//seo关键字
         var seoms = $('#seoms').val();//seo描述
         var article_sort = $('#article_sort').val();//文章所属分类
@@ -193,7 +217,7 @@
             layer.msg('新闻标题不能为空!', {icon: 5, time: 1000});
             return false;
         }
-        if (artcle_fm == '' ) {
+        if (article_fm == '' ) {
             layer.msg('封面图片不能为空!', {icon: 5, time: 1000});
             return false;
         }
@@ -203,7 +227,7 @@
         }
         $.ajax({
             url: "",
-            data: {'article_name':article_name,'article_xbt':article_xbt,'artcle_fm':artcle_fm,'seogjz':seogjz,'seoms':seoms,'article_sort':article_sort,'article_content':article_content},
+            data: {'article_name':article_name,'article_xbt':article_xbt,'article_fm':article_fm,'seogjz':seogjz,'seoms':seoms,'article_sort':article_sort,'article_content':article_content},
             type: 'post',
             dataType: 'json',
             success: function (date) {

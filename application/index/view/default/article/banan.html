@@ -1,0 +1,48 @@
+﻿<!--    head-->
+{include file="common/head"}
+<!--    栏目-->
+{include file="common/column"}
+
+<script type="text/javascript">
+    function f1() {
+        $(".nav_bg .c_wrap .nav ul li a").removeClass('one');
+        $(".nav_bg .c_wrap .nav ul li:eq(5) a").addClass('one');
+    }
+    f1();
+</script>
+<div class="header_c2"></div>
+
+
+<div class="lm_name">
+    <div class="c_wrap">办案风采</div>
+</div>
+<div class="lm_pic "
+     style="background-image: url(__INDEX__/images/bananback.jpg)">
+    <div class="c_wrap">
+        <div class="in_txt in_txt1"><span><h2>{$title.article_name}</h2></span></div>
+    </div>
+</div>
+<!--内容-->
+<div class="main">
+    <div class="xw_list">
+        <div class="wrap">
+            <div class="list">
+                <ul>
+                    {volist name='anli' id='v'}
+                    <li class="tr_sc">
+                        <a href="{:url('/content/','','')}{$v.id}.html" target="_blank"><span class="time"><b>{$v.addtime|mb_substr=8,2,'utf-8'}</b>{$v.addtime|mb_substr=0,7,'utf-8'}</span>
+                            <span class="img"><img src="{$v.article_fm}"/></span>
+                            <span class="tit"><span class="tit2">{$v.article_name}</span></span>
+                        </a>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+            <div class="page">
+                {$anli->render()}
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+{include file="common/bottom"}

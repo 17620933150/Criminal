@@ -19,7 +19,7 @@ class Faluzisi extends Common {
                     ->where('article_sort','in',$sort_id)
                     ->alias('a')
                     ->join('sh_sort b','a.article_sort = b.id ','LEFT')
-                    ->field('a.id,a.article_name,a.addtime,a.article_content,b.sort_name as fat_name')
+                    ->field('a.id,a.article_name,a.article_fm,a.addtime,a.article_content,b.sort_name as fat_name')
                     ->order('a.status DESC,a.zhidtime DESC,a.addtime DESC')
                     ->paginate(11);
             }else{
@@ -27,7 +27,7 @@ class Faluzisi extends Common {
                 ->where('article_sort',$key)
                 ->alias('a')
                 ->join('sh_sort b','a.article_sort = b.id ','LEFT')
-                ->field('a.id,a.article_sort,a.addtime,a.article_name,a.article_content,b.sort_name as fat_name')
+                ->field('a.id,a.article_sort,a.article_fm,a.addtime,a.article_name,a.article_content,b.sort_name as fat_name')
                 ->order('a.status DESC,a.zhidtime DESC,a.addtime DESC')
                 ->paginate(11);
             }
@@ -47,10 +47,28 @@ class Faluzisi extends Common {
             ->where('id',$key)
             ->field('id')
             ->find();
-
-
+        $title['article_name'] =$title['sort_name'];
         return view('article/article',['anli'=>$anli,'sort'=>$sort,'title'=>$title,'bt'=>$bt]);
     }
+
+    public function Banan(){
+            $anli= db('cr_article')
+                ->where('article_sort',24)
+                ->alias('a')
+                ->join('sh_sort b','a.article_sort = b.id ','LEFT')
+                ->field('a.id,a.article_sort,a.article_fm,a.addtime,a.article_name,a.article_content,b.sort_name as fat_name')
+                ->order('a.status DESC,a.zhidtime DESC,a.addtime DESC')
+                ->paginate(11);
+        $title = db('sh_sort')
+            ->where('a.id',24)
+            ->alias('a')
+            ->join('sh_sort b','a.fat_id = b.id ','LEFT')
+            ->field('a.id,a.fat_id,a.sort_name,a.sort_name as article_name,a.seogjz,a.seoms,b.sort_name as fat_name')
+            ->find();
+        $title['article_name'] =$title['sort_name'];
+        return view('article/banan',['anli'=>$anli,'title'=>$title]);
+    }
+
     public function Faluzisidata(){
         $key = input('key');
         if ($key == null) {
@@ -62,7 +80,6 @@ class Faluzisi extends Common {
             ->join('sh_sort b','a.article_sort = b.id ','LEFT')
             ->field('a.id,a.article_sort,a.addtime,a.article_name,a.article_content,a.article_xbt,b.sort_name as fat_name')
             ->find();
-
         $title = db('sh_sort')
             ->where('a.id',$anli['article_sort'])
             ->alias('a')
@@ -70,10 +87,13 @@ class Faluzisi extends Common {
             ->join('cr_article c',"c.id = $key",'LEFT')
             ->field('a.id,a.sort_name,b.sort_name as fat_name,c.article_name,c.seogjz,c.seoms')
             ->find();
-        $bt = db('sh_sort')
-            ->where('id',$key)
-            ->field('id')
+        $bt = db('cr_article')
+            ->where('a.id',$key)
+            ->alias('a')
+            ->join('sh_sort b','a.article_sort = b.id ','LEFT')
+            ->field('a.id,a.article_sort,a.addtime,a.article_name,a.article_content,a.article_xbt,b.sort_name as fat_name')
             ->find();
-        return view('article/articledata',['articledata'=>$anli,'title'=>$title,'bt'=>$bt]);
+
+        return view('article/articledata',['articledata'=>$anli,'title'=>$title]);
     }
 }

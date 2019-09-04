@@ -1,29 +1,47 @@
-<!--头部-->
-{include file="common/top"}
-    <div class="wrap">
-        <div class="page-content">
-            <div class="site"><a title="首页" href="{:url('index/index/index')}">首页</a>><span>业务领域</span></div>
-
-
-            <div class="main-title cf">
-                <h2 class="title">业务领域</h2>
-            </div>
-            <div class="main-content">
-                <p>广东国晖（广州）律师事务所是一家提供包括非诉业务、民商诉讼、刑事诉讼等全面法律服务的综合性律师事务所。致力于成为中国最优秀的专业化、团队化、国际化的综合性律师事务所。</p>
-                <div class="inner-main business-ind cf">
-                    <ul class="cf">
-                        {volist name='anli' id='v'}
-                        <li><h3><a href="{:url('/content/','','')}{$v.id}.html"> {$v.article_name}</a></h3>
-                            <p>{$v.article_content|strip_tags|mb_substr=0,60,'utf-8'}</p>
-                            <a href="{:url('/content/','','')}{$v.id}.html">查看详细 ></a>
-                        </li>
-                        {/volist}
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--头部-->
+﻿<!--    head-->
+{include file="common/head"}
+<!--    栏目-->
+{include file="common/column"}
+
+<script type="text/javascript">
+    function f1() {
+        $(".nav_bg .c_wrap .nav ul li a").removeClass('one');
+        $(".nav_bg .c_wrap .nav ul li:eq(2) a").addClass('one');
+    }
+    f1();
+</script>
+
+<div class="header_c2"></div>
+
+
+<div class="lm_name">
+    <div class="c_wrap">业务领域</div>
+</div>
+<div class="lm_pic lm_pic_nonav" style="background-image: url(__INDEX__/images/businessback.jpg)">
+    <div class="c_wrap">
+        <div class="in_txt in_txt1"><span><h2>业务领域</h2><b>Practice Areas</b></span></div>
+    </div>
+</div>
+<!--内容-->
+<div class="main">
+    <div class="bgs_part2 ywly_list">
+        <div class="wrap">
+            <ul class="cf">
+                {volist name='anli' id='v'}
+                <li>
+                    <dl>
+                        <dt>
+                            <a href="{:url('/buda/','','')}{$v.id}.html" style="background-image: url({$v.bu_fm});"></a>
+                        </dt>
+                        <dd>
+                            <a href="{:url('/buda/','','')}{$v.id}.html">{$v.bu_name}</a><span>{$v.bu_content|strip_tags|mb_substr=0,50,'utf-8'}...</span>
+                        </dd>
+                    </dl>
+                </li>
+                {/volist}
+            </ul>
+        </div>
+    </div>
+</div>
+<!--底部-->
 {include file="common/bottom"}

@@ -10,6 +10,8 @@ class Common extends Controller {
     public function _initialize(){
         $lunbotu= db('sh_lunbotu')
             ->select();//首页轮播图
+        $jsao= db('sh_jsao')
+            ->find(1);//首页关于我们
         $homeanli = db('cr_article')
             ->where('article_sort','22')
             ->order('status DESC,zhidtime DESC,addtime DESC')
@@ -28,11 +30,8 @@ class Common extends Controller {
             ->field('id,article_name,article_content,addtime')
             ->limit('10')
             ->select();//首页国晖动态
-        $homelingyu= db('cr_article')
-            ->where('article_sort','25')
+        $homelingyu=db('sh_business')
             ->order('status DESC,zhidtime DESC,addtime DESC')
-            ->field('id,article_name,article_content')
-            ->limit('9')
             ->select();//首页业务领域
         $homelingyu10= db('cr_article')
             ->where('article_sort','25')
@@ -95,7 +94,7 @@ class Common extends Controller {
             ->where('article_sort','22')
             ->alias('a')
             ->join('sh_sort b','a.article_sort = b.id ','LEFT')
-            ->field('a.id,a.article_name,a.addtime,b.sort_name as fat_name')
+            ->field('a.id,a.article_name,a.addtime,article_fm,b.sort_name as fat_name')
             ->order('a.status DESC,a.zhidtime DESC,a.addtime DESC')
             ->limit('8')
             ->select();//首页新闻中心
@@ -118,6 +117,7 @@ class Common extends Controller {
             ->select();//刑事知识
         // 渲染模板输出
         $this->assign([
+            'jsao'=>$jsao,//首页关于我们
             'crknowledge'=>$crknowledge,//刑事知识
             'mobilenewss'=>$mobilenewss,//首页新闻中心模块数量
             'mobilenews'=>$mobilenews,//首页新闻中心
